@@ -70,10 +70,16 @@ alias mx='Vboxmanage startvm "NixOS" --type headless && VBoxManage controlvm "Ni
 alias mm='VBoxManage controlvm NixOS poweroff NixOS'
 EOF
 
+# iTerm2 settings
+# Specify the preferences directory
+defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "~/dotfiles/iterm2" # TODO(mbernadin): find correct file and source it before running
+# Tell iTerm2 to use the custom preferences in the directory
+defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
+
 # crontab -e
 ( crontab -l ; echo "*/29 * * * * /usr/local/bin/maws login 273854932432_Mesosphere-PowerUser" ) | crontab -
 
-curl -O https://github.com/mesosphere/maws/releases/download/0.1.5/maws-darwin
+curl -O https://github.com/mesosphere/maws/releases/download/0.1.5/maws-darwin # AUTHENTICATION REQUIRED (BROKEN)
 chmod +x maws-darwin
 sudo mv maws-darwin /usr/local/bin/maws
 
