@@ -31,6 +31,7 @@ brew cask install slack
 brew cask install docker
 brew cask install cloudapp
 brew cask install google-cloud-sdk
+brew cask install vagrant
 brew cask install virtualbox # this will fail (mac security settings)
 
 # GoTo Security and Priacy on Mac and allow Oracle
