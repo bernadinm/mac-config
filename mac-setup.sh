@@ -15,6 +15,7 @@ brew install trash
 brew install azure-cli
 brew install awscli
 brew install mas
+brew install watch
 
 # mas (apple store install tool)
 mas install 688211836 # easyres
