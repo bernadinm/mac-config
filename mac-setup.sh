@@ -16,6 +16,7 @@ brew install azure-cli
 brew install awscli
 brew install mas
 brew install watch
+brea install aria2
 
 # mas (apple store install tool)
 mas install 688211836 # easyres
