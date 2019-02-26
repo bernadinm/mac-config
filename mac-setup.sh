@@ -16,7 +16,9 @@ brew install azure-cli
 brew install awscli
 brew install mas
 brew install watch
-brea install aria2
+brew install aria2
+brew install go
+brew install rust
 
 # mas (apple store install tool)
 mas install 688211836 # easyres
@@ -71,6 +73,11 @@ alias demo='eval $(maws login 359820441116_Mesosphere-PowerUser)'
 alias mp='ssh mb@$(VBoxManage guestproperty get "NixOS" "/VirtualBox/GuestInfo/Net/0/V4/IP" | cut -d" " -f2)'
 alias mx='Vboxmanage startvm "NixOS" --type headless && VBoxManage controlvm "NixOS" addencpassword "NixOS" -'
 alias mm='VBoxManage controlvm NixOS poweroff NixOS'
+export GOPATH="${HOME}/.go"
+export GOROOT="$(brew --prefix golang)/libexec"
+export PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin"
+test -d "${GOPATH}" || mkdir "${GOPATH}"
+test -d "${GOPATH}/src/github.com" || mkdir -p "${GOPATH}/src/github.com"
 EOF
 
 # iTerm2 settings
