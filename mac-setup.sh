@@ -37,6 +37,7 @@ brew cask install cloudapp
 brew cask install google-cloud-sdk
 brew cask install vagrant
 brew cask install virtualbox # this will fail (mac security settings)
+brew cask install zoomus
 
 # GoTo Security and Priacy on Mac and allow Oracle
 brew cask reinstall --force virtualbox
