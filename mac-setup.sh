@@ -22,6 +22,7 @@ brew install rust
 
 # mas (apple store install tool)
 mas install 688211836 # easyres
+mas install 595191960 # CopuCliip
 
 # brew cask list | xargs -L1
 brew cask install google-chrome
@@ -50,6 +51,7 @@ open -a atom
 open -a slack
 open -a docker
 open -a cloudapp
+open -a copyclip
 open -a marshallofsound-google-play-music-player
 
 # Atom Settings
