@@ -3,6 +3,7 @@
 brew tap caskroom/cask
 
 # xargs brew install < brew.txt
+brew update
 brew install spectacle
 brew install terraform
 brew install git
@@ -19,6 +20,7 @@ brew install watch
 brew install aria2
 brew install go
 brew install rust
+brew install bash; sudo bash -c 'echo /usr/local/bin/bash >> /etc/shells'
 
 # mas (apple store install tool)
 mas install 688211836 # easyres
@@ -67,6 +69,19 @@ defaults write NSGlobalDomain KeyRepeat -int 1
 defaults write NSGlobalDomain InitialKeyRepeat -int 12
 defaults write -g com.apple.trackpad.scaling 1.5
 
+# System Setup
+mkdir -p ~/Sites
+
+# Configure Pureline
+mkdir -p ~/Sites/chris-marsh
+git clone https://github.com/chris-marsh/pureline.git ~/Sites/chris-marsh/pureline
+cp ~/Sites/chris-marsh/pureline/configs/powerline_full_256col.conf ~/.pureline.conf
+
+# Install Powerline Font
+mkdir -p ~/Sites/powerline
+git clone https://github.com/powerline/fonts.git ~/Sites/powerline/fonts --depth=1
+bash ~/Sites/powerline/fonts/install.sh
+
 # bash_profile
 cat > ~/.bash_profile <<'EOF'
 set -o ignoreeof
@@ -81,6 +96,16 @@ export GOROOT="$(brew --prefix golang)/libexec"
 export PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin"
 test -d "${GOPATH}" || mkdir "${GOPATH}"
 test -d "${GOPATH}/src/github.com" || mkdir -p "${GOPATH}/src/github.com"
+
+if [ "$TERM" != "linux" ]; then
+    source ~/Sites/chris-marsh/pureline/pureline ~/.pureline.conf
+fi
+
+# Powerline
+#powerline-daemon -q
+#POWERLINE_BASH_CONTINUATION=1
+#POWERLINE_BASH_SELECT=1
+#source /usr/local/lib/python3.6/site-packages/powerline/bindings/bash/powerline.sh
 EOF
 
 # iTerm2 settings
