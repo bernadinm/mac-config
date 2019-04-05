@@ -19,7 +19,7 @@ brew install mas
 brew install watch
 brew install aria2
 brew install go
-brew install rust
+brew install rustup
 brew install bash; sudo bash -c 'echo /usr/local/bin/bash >> /etc/shells'
 
 # mas (apple store install tool)
@@ -42,6 +42,7 @@ brew cask install vagrant
 brew cask install virtualbox # this will fail (mac security settings)
 brew cask install zoomus
 brew cask install postman
+brew cask install ngrok
 
 # GoTo Security and Priacy on Mac and allow Oracle
 brew cask reinstall --force virtualbox
