@@ -69,6 +69,7 @@ defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
 defaults write NSGlobalDomain KeyRepeat -int 1
 defaults write NSGlobalDomain InitialKeyRepeat -int 12
 defaults write -g com.apple.trackpad.scaling 1.5
+defaults write com.apple.systemuiserver "NSStatusItem Visible com.apple.menuextra.bluetooth" -bool true
 
 # System Setup
 mkdir -p ~/Sites
