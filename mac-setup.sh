@@ -140,8 +140,8 @@ VBoxManage modifyvm NixOS --nic1 bridged
 VBoxManage encryptmedium $(VBoxManage showvminfo NixOS | grep 'SATA.*UUID' | sed 's/^.*UUID: \(.*\))/\1/') --newpassword - --cipher "AES-XTS256-PLAIN64" --newpasswordid "NixOS"
 
 # VirtualBox Expansion
-FILENAME_PATH=$(find ~/VirtualBox\ VMs/ -name nixos-*.vmdk)
-VBoxManage clonehd "$FILENAME_PATH" "$(echo $FILENAME_PATH | sed 's/\.vmdk/.vdi/g')" --format vdi
-VBoxManage modifyhd "$(echo $FILENAME_PATH | sed 's/\.vmdk/.vdi/g')"  --resize 51200
-VBoxManage clonehd  "$(echo $FILENAME_PATH | sed 's/\.vmdk/.vdi/g')"  "$(echo $FILENAME_PATH | sed 's/\.vmdk/.vmdk2/g')" --format vmdk
-mv "$(echo $FILENAME_PATH | sed 's/\.vmdk/.vmdk2/g')"  "$(echo $FILENAME_PATH)"
+#FILENAME_PATH=$(find ~/VirtualBox\ VMs/ -name nixos-*.vmdk)
+#VBoxManage clonehd "$FILENAME_PATH" "$(echo $FILENAME_PATH | sed 's/\.vmdk/.vdi/g')" --format vdi
+#VBoxManage modifyhd "$(echo $FILENAME_PATH | sed 's/\.vmdk/.vdi/g')"  --resize 51200
+#VBoxManage clonehd  "$(echo $FILENAME_PATH | sed 's/\.vmdk/.vdi/g')"  "$(echo $FILENAME_PATH | sed 's/\.vmdk/.vmdk2/g')" --format vmdk
+#mv "$(echo $FILENAME_PATH | sed 's/\.vmdk/.vmdk2/g')"  "$(echo $FILENAME_PATH)"
