@@ -136,6 +136,9 @@ curl -o ~/Downloads/nixos-18.09.1985.749a3a0d00b-x86_64-linux.ova https://d3g5gs
 vboxmanage import --vsys 0 --vmname NixOS --cpus 2 --memory 8192  ~/Downloads/nixos-18.09.1985.749a3a0d00b-x86_64-linux.ova
 # Select Networking
 VBoxManage modifyvm NixOS --nic1 bridged
+VBoxManage modifyvm NixOS --natnet1 en0
+# Disable audio
+VBoxManage modifyvm NixOS --audio none
 # Add Encryption
 VBoxManage encryptmedium $(VBoxManage showvminfo NixOS | grep 'SATA.*UUID' | sed 's/^.*UUID: \(.*\))/\1/') --newpassword - --cipher "AES-XTS256-PLAIN64" --newpasswordid "NixOS"
 
