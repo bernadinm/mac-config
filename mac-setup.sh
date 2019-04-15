@@ -43,6 +43,7 @@ brew cask install vagrant
 brew cask install virtualbox # this will fail (mac security settings)
 brew cask install zoomus
 brew cask install ngrok
+brew cask install java
 
 # GoTo Security and Priacy on Mac and allow Oracle
 brew cask reinstall --force virtualbox
