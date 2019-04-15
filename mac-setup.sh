@@ -21,6 +21,7 @@ brew install watch
 brew install aria2
 brew install go
 brew install rustup
+brew install tree
 brew install bash; sudo bash -c 'echo /usr/local/bin/bash >> /etc/shells'
 
 # mas (apple store install tool)
