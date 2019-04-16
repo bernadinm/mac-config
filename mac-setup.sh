@@ -118,7 +118,7 @@ EOF
 
 # iTerm2 settings
 # Specify the preferences directory
-defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "~/dotfiles/iterm2" # TODO(mbernadin): find correct file and source it before running
+defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "$HOME/dotfiles/iterm2" # TODO(mbernadin): find correct file and source it before running
 # Tell iTerm2 to use the custom preferences in the directory
 defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
 
@@ -131,8 +131,8 @@ sudo mv maws-darwin /usr/local/bin/maws
 
 # Install VBoxExtention
 LatestVirtualBoxVersion=$(curl http://download.virtualbox.org/virtualbox/LATEST.TXT) && curl -O "http://download.virtualbox.org/virtualbox/${LatestVirtualBoxVersion}/Oracle_VM_VirtualBox_Extension_Pack-${LatestVirtualBoxVersion}.vbox-extpack"
-diff <(shasum5.18 -a 256 Oracle_VM_VirtualBox_Extension_Pack-${LatestVirtualBoxVersion}.vbox-extpack) <(curl https://www.virtualbox.org/download/hashes/${LatestVirtualBoxVersion}/SHA256SUMS | grep Oracle_VM_VirtualBox_Extension_Pack-${LatestVirtualBoxVersion}.vbox-extpack | sed 's/\*/ /g')
-sudo VBoxManage extpack install --replace Oracle_VM_VirtualBox_Extension_Pack-${LatestVirtualBoxVersion}.vbox-extpack
+diff <(shasum5.18 -a 256 Oracle_VM_VirtualBox_Extension_Pack-"${LatestVirtualBoxVersion}".vbox-extpack) <(curl https://www.virtualbox.org/download/hashes/"${LatestVirtualBoxVersion}"/SHA256SUMS | grep Oracle_VM_VirtualBox_Extension_Pack-"${LatestVirtualBoxVersion}".vbox-extpack | sed 's/\*/ /g')
+sudo VBoxManage extpack install --replace Oracle_VM_VirtualBox_Extension_Pack-"${LatestVirtualBoxVersion}".vbox-extpack
 
 # Download NixOS VirtualBox
 curl -o ~/Downloads/nixos-18.09.1985.749a3a0d00b-x86_64-linux.ova https://d3g5gsiof5omrk.cloudfront.net/nixos/18.09/nixos-18.09.1985.749a3a0d00b/nixos-18.09.1985.749a3a0d00b-x86_64-linux.ova
@@ -144,7 +144,7 @@ VBoxManage modifyvm NixOS --natnet1 en0
 # Disable audio
 VBoxManage modifyvm NixOS --audio none
 # Add Encryption
-VBoxManage encryptmedium $(VBoxManage showvminfo NixOS | grep 'SATA.*UUID' | sed 's/^.*UUID: \(.*\))/\1/') --newpassword - --cipher "AES-XTS256-PLAIN64" --newpasswordid "NixOS"
+VBoxManage encryptmedium "$(VBoxManage showvminfo NixOS | grep 'SATA.*UUID' | sed 's/^.*UUID: \(.*\))/\1/')" --newpassword - --cipher "AES-XTS256-PLAIN64" --newpasswordid "NixOS"
 
 # VirtualBox Expansion
 #FILENAME_PATH=$(find ~/VirtualBox\ VMs/ -name nixos-*.vmdk)
