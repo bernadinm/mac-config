@@ -23,6 +23,7 @@ brew install go
 brew install rustup
 brew install tree
 brew intsall packer
+brew install shellcheck
 brew install bash; sudo bash -c 'echo /usr/local/bin/bash >> /etc/shells'
 
 # mas (apple store install tool)
