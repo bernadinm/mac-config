@@ -116,7 +116,7 @@ fi
 #source /usr/local/lib/python3.6/site-packages/powerline/bindings/bash/powerline.sh
 
 # Lynx ENV
-export WWW_HOME=duckduckgo.com
+export WWW_HOME=https://duckduckgo.com/lite/
 EOF
 
 # iTerm2 settings
