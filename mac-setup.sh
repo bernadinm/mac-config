@@ -114,6 +114,9 @@ fi
 #POWERLINE_BASH_CONTINUATION=1
 #POWERLINE_BASH_SELECT=1
 #source /usr/local/lib/python3.6/site-packages/powerline/bindings/bash/powerline.sh
+
+# Lynx ENV
+WWW_HOME=duckduckgo.com
 EOF
 
 # iTerm2 settings
