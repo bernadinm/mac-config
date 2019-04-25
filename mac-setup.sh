@@ -95,7 +95,7 @@ set -o ignoreeof
 alias dev='eval $(maws login 273854932432_Mesosphere-PowerUser)'
 alias prod='eval $(maws login 633059600857_Mesosphere-PowerUser)'
 alias demo='eval $(maws login 359820441116_Mesosphere-PowerUser)'
-alias mp='until nc $(VBoxManage guestproperty get "NixOS" "/VirtualBox/GuestInfo/Net/0/V4/IP" | cut -d" " -f2) 22 -G 1 -w 0; do echo connecting ...; sleep 10; done && ssh mb@$(VBoxManage guestproperty get "NixOS" "/VirtualBox/GuestInfo/Net/0/V4/IP" | cut -d" " -f2)'
+alias mp='until nc $(VBoxManage guestproperty get "NixOS" "/VirtualBox/GuestInfo/Net/0/V4/IP" | cut -d" " -f2) 22 -G 1 -w 0; do echo Connecting...; sleep 10; done && ssh mb@$(VBoxManage guestproperty get "NixOS" "/VirtualBox/GuestInfo/Net/0/V4/IP" | cut -d" " -f2)'
 alias mx='Vboxmanage startvm "NixOS" --type headless && VBoxManage controlvm "NixOS" addencpassword "NixOS" -'
 alias mm='VBoxManage controlvm NixOS poweroff NixOS'
 export GOPATH="${HOME}/.go"
