@@ -26,6 +26,10 @@ brew intsall packer
 brew install shellcheck
 brew install bash; sudo bash -c 'echo /usr/local/bin/bash >> /etc/shells'
 
+# Kubernetes related binaries
+brew install jsonnet
+go get -u -v github.com/heptio/sonobuoy
+
 # GPG Config
 brew install pinentry-mac
 echo "pinentry-program /usr/local/bin/pinentry-mac" >> ~/.gnupg/gpg-agent.conf
