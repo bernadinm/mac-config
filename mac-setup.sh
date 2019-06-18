@@ -24,6 +24,7 @@ brew install rustup
 brew install tree
 brew intsall packer
 brew install shellcheck
+brew install git-crypt
 brew install bash; sudo bash -c 'echo /usr/local/bin/bash >> /etc/shells'
 
 # Kubernetes related binaries
@@ -114,6 +115,9 @@ test -d "${GOPATH}" || mkdir "${GOPATH}"
 test -d "${GOPATH}/src/github.com" || mkdir -p "${GOPATH}/src/github.com"
 grep -slR "PRIVATE" ~/.ssh | xargs ssh-add
 gpg-agent -s --daemon --pinentry-program /usr/local/bin/pinentry 2> /dev/null && echo started gpg-agent
+
+# git-crypt util: workaround for https://github.com/AGWA/git-crypt/issues/39
+alias gpgcryptusers='pushd .git-crypt/keys/default/0; for file in *.gpg; do echo "${file} : " && git log -- ${file} | sed -n 9p; done; popd'
 
 #if [ "$TERM" != "linux" ]; then
 #    source ~/Sites/chris-marsh/pureline/pureline ~/.pureline.conf
