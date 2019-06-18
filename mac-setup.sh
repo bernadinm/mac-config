@@ -26,6 +26,11 @@ brew intsall packer
 brew install shellcheck
 brew install bash; sudo bash -c 'echo /usr/local/bin/bash >> /etc/shells'
 
+# GPG Config
+brew install pinentry-mac
+echo "pinentry-program /usr/local/bin/pinentry-mac" >> ~/.gnupg/gpg-agent.conf
+killall gpg-agent
+
 # mas (apple store install tool)
 mas install 688211836 # easyres
 mas install 595191960 # CopuCliip
@@ -104,6 +109,7 @@ export PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin"
 test -d "${GOPATH}" || mkdir "${GOPATH}"
 test -d "${GOPATH}/src/github.com" || mkdir -p "${GOPATH}/src/github.com"
 grep -slR "PRIVATE" ~/.ssh | xargs ssh-add
+gpg-agent -s --daemon --pinentry-program /usr/local/bin/pinentry 2> /dev/null && echo started gpg-agent
 
 #if [ "$TERM" != "linux" ]; then
 #    source ~/Sites/chris-marsh/pureline/pureline ~/.pureline.conf
