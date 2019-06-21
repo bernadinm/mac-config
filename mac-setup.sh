@@ -25,6 +25,7 @@ brew install tree
 brew intsall packer
 brew install shellcheck
 brew install git-crypt
+brew install glide
 brew install bash; sudo bash -c 'echo /usr/local/bin/bash >> /etc/shells'
 
 # Kubernetes related binaries
