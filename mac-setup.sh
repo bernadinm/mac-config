@@ -58,6 +58,7 @@ brew cask install virtualbox # this will fail (mac security settings)
 brew cask install zoomus
 brew cask install ngrok
 brew cask install java
+brew cask install visual-studio-code
 
 # GoTo Security and Priacy on Mac and allow Oracle
 brew cask reinstall --force virtualbox
