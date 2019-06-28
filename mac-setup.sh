@@ -30,6 +30,7 @@ brew install bash; sudo bash -c 'echo /usr/local/bin/bash >> /etc/shells'
 
 # Kubernetes related binaries
 brew install jsonnet
+brew install ksonnet/tap/ks
 go get -u -v github.com/heptio/sonobuoy
 
 # GPG Config
