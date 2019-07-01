@@ -111,6 +111,7 @@ alias demo='eval $(maws login 359820441116_Mesosphere-PowerUser)'
 alias mp='until nc $(VBoxManage guestproperty get "NixOS" "/VirtualBox/GuestInfo/Net/0/V4/IP" | cut -d" " -f2) 22 -G 1 -w 0; do echo Connecting...; sleep 10; done && ssh mb@$(VBoxManage guestproperty get "NixOS" "/VirtualBox/GuestInfo/Net/0/V4/IP" | cut -d" " -f2)'
 alias mx='Vboxmanage startvm "NixOS" --type headless && VBoxManage controlvm "NixOS" addencpassword "NixOS" -'
 alias mm='VBoxManage controlvm NixOS poweroff NixOS'
+alias up='find ~/Sites/DevOps/ -name terraform.tfstate | xargs -L1 ls -l | sort -rk5 --numeric-sort | awk "{if( \$5 > 10000) print \$0}"'
 export GOPATH="${HOME}/.go"
 export GOROOT="$(brew --prefix golang)/libexec"
 export PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin"
