@@ -32,6 +32,8 @@ brew install bash; sudo bash -c 'echo /usr/local/bin/bash >> /etc/shells'
 brew install jsonnet
 brew install ksonnet/tap/ks
 go get -u -v github.com/heptio/sonobuoy
+curl -O https://raw.githubusercontent.com/spinnaker/halyard/master/install/macos/InstallHalyard.sh
+sudo bash InstallHalyard.sh
 
 # GPG Config
 brew install pinentry-mac
