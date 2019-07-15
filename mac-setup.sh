@@ -117,6 +117,7 @@ alias mp='until nc $(VBoxManage guestproperty get "NixOS" "/VirtualBox/GuestInfo
 alias mx='Vboxmanage startvm "NixOS" --type headless && VBoxManage controlvm "NixOS" addencpassword "NixOS" -'
 alias mm='VBoxManage controlvm NixOS poweroff NixOS'
 alias up='find ~/Sites/DevOps/ -name terraform.tfstate | xargs -L1 ls -l | sort -rk5 --numeric-sort | awk "{if( \$5 > 10000) print \$0}"'
+alias k='kubectl'
 export GOPATH="${HOME}/.go"
 export GOROOT="$(brew --prefix golang)/libexec"
 export PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin"
