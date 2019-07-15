@@ -28,6 +28,9 @@ brew install git-crypt
 brew install glide
 brew install bash; sudo bash -c 'echo /usr/local/bin/bash >> /etc/shells'
 
+# Enable locate
+sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.locate.plist
+
 # Kubernetes related binaries
 brew install jsonnet
 brew install ksonnet/tap/ks
