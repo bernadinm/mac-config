@@ -110,7 +110,7 @@ bash ~/Sites/powerline/fonts/install.sh
 # bash_profile
 cat > ~/.bash_profile <<'EOF'
 set -o ignoreeof
-alias b='eval $(bws -env | grep export)'
+alias d='eval $(bws -env | grep export)'
 alias mp='until nc $(VBoxManage guestproperty get "NixOS" "/VirtualBox/GuestInfo/Net/0/V4/IP" | cut -d" " -f2) 22 -G 1 -w 0; do echo Connecting...; sleep 10; done && ssh mb@$(VBoxManage guestproperty get "NixOS" "/VirtualBox/GuestInfo/Net/0/V4/IP" | cut -d" " -f2)'
 alias mx='Vboxmanage startvm "NixOS" --type headless && VBoxManage controlvm "NixOS" addencpassword "NixOS" -'
 alias mm='VBoxManage controlvm NixOS poweroff NixOS'
