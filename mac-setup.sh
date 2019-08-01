@@ -37,6 +37,7 @@ brew install ksonnet/tap/ks
 go get -u -v github.com/heptio/sonobuoy
 curl -O https://raw.githubusercontent.com/spinnaker/halyard/master/install/macos/InstallHalyard.sh
 sudo bash InstallHalyard.sh
+brew install kubernetes-cli
 
 # GPG Config
 brew install pinentry-mac
