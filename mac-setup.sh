@@ -38,6 +38,11 @@ go get -u -v github.com/heptio/sonobuoy
 curl -O https://raw.githubusercontent.com/spinnaker/halyard/master/install/macos/InstallHalyard.sh
 sudo bash InstallHalyard.sh
 brew install kubernetes-cli
+curl -sL -o kubefed.tgz https://github.com/kubernetes-sigs/kubefed/releases/download/v0.1.0-rc5/kubefedctl-0.1.0-rc5-darwin-amd64.tgz
+tar -xvf kubefed.tgz
+chmod +x kubefedctl
+rm kubefed.tgz
+mv kubefedctl /usr/local/bin/.
 
 # GPG Config
 brew install pinentry-mac
