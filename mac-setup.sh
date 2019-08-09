@@ -26,6 +26,7 @@ brew intsall packer
 brew install shellcheck
 brew install git-crypt
 brew install glide
+brew install bash-completion
 brew install bash; sudo bash -c 'echo /usr/local/bin/bash >> /etc/shells'
 
 # Enable locate
@@ -129,6 +130,9 @@ test -d "${GOPATH}" || mkdir "${GOPATH}"
 test -d "${GOPATH}/src/github.com" || mkdir -p "${GOPATH}/src/github.com"
 grep -slR "PRIVATE" ~/.ssh | xargs ssh-add
 gpg-agent -s --daemon --pinentry-program /usr/local/bin/pinentry 2> /dev/null && echo started gpg-agent
+
+# Bash Completion Enable
+[ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
 
 # git-crypt util: workaround for https://github.com/AGWA/git-crypt/issues/39
 alias gpgcryptusers='pushd .git-crypt/keys/default/0; for file in *.gpg; do echo "${file} : " && git log -- ${file} | sed -n 9p; done; popd'
