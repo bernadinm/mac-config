@@ -47,7 +47,17 @@ mv kubefedctl /usr/local/bin/.
 
 # GPG Config
 brew install pinentry-mac
-echo "pinentry-program /usr/local/bin/pinentry-mac" >> ~/.gnupg/gpg-agent.conf
+
+# gpg-agent profile
+cat > ~/.gnupg/gpg-agent.conf <<'EOF'
+pinentry-program /usr/local/bin/pinentry-mac
+enable-ssh-support
+write-env-file
+use-standard-socket
+default-cache-ttl 600
+max-cache-ttl 7200
+EOF
+
 killall gpg-agent
 
 # mas (apple store install tool)
@@ -128,8 +138,6 @@ export GOROOT="$(brew --prefix golang)/libexec"
 export PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin"
 test -d "${GOPATH}" || mkdir "${GOPATH}"
 test -d "${GOPATH}/src/github.com" || mkdir -p "${GOPATH}/src/github.com"
-grep -slR "PRIVATE" ~/.ssh | xargs ssh-add
-gpg-agent -s --daemon --pinentry-program /usr/local/bin/pinentry 2> /dev/null && echo started gpg-agent
 
 # Bash Completion Enable
 [ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
@@ -146,6 +154,10 @@ alias gpgcryptusers='pushd .git-crypt/keys/default/0; for file in *.gpg; do echo
 #POWERLINE_BASH_CONTINUATION=1
 #POWERLINE_BASH_SELECT=1
 #source /usr/local/lib/python3.6/site-packages/powerline/bindings/bash/powerline.sh
+
+# gpg ssh configs
+export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+gpgconf --launch gpg-agent
 
 # Lynx ENV
 export WWW_HOME=https://duckduckgo.com/lite/
