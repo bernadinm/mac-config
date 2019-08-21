@@ -29,6 +29,15 @@ brew install glide
 brew install bash-completion
 brew install bash; sudo bash -c 'echo /usr/local/bin/bash >> /etc/shells'
 
+# Vim 8 Packages
+git clone https://github.com/rust-lang/rust.vim ~/.vim/pack/plugins/start/rust.vim
+
+# vim_rc
+cat > ~/.vimrc <<'EOF'
+filetype plugin indent on
+syntax on
+EOF
+
 # Enable locate
 sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.locate.plist
 
