@@ -30,7 +30,8 @@ brew install bash-completion
 brew install bash; sudo bash -c 'echo /usr/local/bin/bash >> /etc/shells'
 
 # Vim 8 Packages
-git clone https://github.com/rust-lang/rust.vim ~/.vim/pack/plugins/start/rust.vim
+git clone https://github.com/rust-lang/rust.vim ~/.vim/pack/plugins/start/rust.vim # rust.vim
+git clone https://github.com/hashivim/vim-terraform.git ~/.vim/pack/plugins/start/terraform.vim # terraform.vim
 
 # vim_rc
 cat > ~/.vimrc <<'EOF'
