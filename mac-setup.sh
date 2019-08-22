@@ -27,7 +27,11 @@ brew install shellcheck
 brew install git-crypt
 brew install glide
 brew install bash-completion
+brew install python3 && sudo easy_install pip
 brew install bash; sudo bash -c 'echo /usr/local/bin/bash >> /etc/shells'
+
+# Install xcode
+xcode-select --install
 
 # Vim 8 Packages
 git clone https://github.com/rust-lang/rust.vim ~/.vim/pack/plugins/start/rust.vim # rust.vim
@@ -125,9 +129,10 @@ defaults write com.apple.systemuiserver "NSStatusItem Visible com.apple.menuextr
 mkdir -p ~/Sites
 
 # Configure Pureline
-mkdir -p ~/Sites/chris-marsh
-git clone https://github.com/chris-marsh/pureline.git ~/Sites/chris-marsh/pureline
-cp ~/Sites/chris-marsh/pureline/configs/powerline_full_256col.conf ~/.pureline.conf
+# mkdir -p ~/Sites/chris-marsh
+# git clone https://github.com/chris-marsh/pureline.git ~/Sites/chris-marsh/pureline
+# cp ~/Sites/chris-marsh/pureline/configs/powerline_full_256col.conf ~/.pureline.conf
+pip3.7 install --user powerline-status
 
 # Install Powerline Font
 mkdir -p ~/Sites/powerline
@@ -160,10 +165,11 @@ alias gpgcryptusers='pushd .git-crypt/keys/default/0; for file in *.gpg; do echo
 #fi
 
 # Powerline
-#powerline-daemon -q
-#POWERLINE_BASH_CONTINUATION=1
-#POWERLINE_BASH_SELECT=1
-#source /usr/local/lib/python3.6/site-packages/powerline/bindings/bash/powerline.sh
+export PATH=$PATH:$HOME/Library/Python/2.7/bin:$HOME/Library/Python/3.7/bin
+powerline-daemon -q
+POWERLINE_BASH_CONTINUATION=1
+POWERLINE_BASH_SELECT=1
+. /Users/mbernadin/Library/Python/**/lib/python/site-packages/powerline/bindings/bash/powerline.sh
 
 # gpg ssh configs
 export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
