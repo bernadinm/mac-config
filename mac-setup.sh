@@ -41,6 +41,9 @@ git clone https://github.com/hashivim/vim-terraform.git ~/.vim/pack/plugins/star
 cat > ~/.vimrc <<'EOF'
 filetype plugin indent on
 syntax on
+set list
+set number
+highlight LineNr ctermfg=darkgrey
 EOF
 
 # Enable locate
