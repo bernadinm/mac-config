@@ -10,6 +10,7 @@ brew install wget
 brew install git gti
 brew install hub
 brew install gpg2
+brew install pinentry-mac
 brew install tmate
 brew install lynx
 brew install jq
@@ -63,8 +64,6 @@ rm kubefed.tgz
 mv kubefedctl /usr/local/bin/.
 
 # GPG Config
-brew install pinentry-mac
-
 # gpg-agent profile
 cat > ~/.gnupg/gpg-agent.conf <<'EOF'
 pinentry-program /usr/local/bin/pinentry-mac
@@ -187,13 +186,6 @@ EOF
 defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "$HOME/dotfiles/iterm2" # TODO(mbernadin): find correct file and source it before running
 # Tell iTerm2 to use the custom preferences in the directory
 defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
-
-# crontab -e
-( crontab -l ; echo "*/29 * * * * /usr/local/bin/maws login 273854932432_Mesosphere-PowerUser" ) | crontab -
-
-curl -O https://github.com/mesosphere/maws/releases/download/0.1.5/maws-darwin # AUTHENTICATION REQUIRED (BROKEN)
-chmod +x maws-darwin
-sudo mv maws-darwin /usr/local/bin/maws
 
 # Install VBoxExtention
 LatestVirtualBoxVersion=$(curl http://download.virtualbox.org/virtualbox/LATEST.TXT) && curl -O "http://download.virtualbox.org/virtualbox/${LatestVirtualBoxVersion}/Oracle_VM_VirtualBox_Extension_Pack-${LatestVirtualBoxVersion}.vbox-extpack"
