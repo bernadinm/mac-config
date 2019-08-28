@@ -44,6 +44,7 @@ filetype plugin indent on
 syntax on
 set list
 set number
+set ff=unix
 highlight LineNr ctermfg=darkgrey
 EOF
 
