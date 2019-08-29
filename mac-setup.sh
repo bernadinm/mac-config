@@ -142,6 +142,9 @@ mkdir -p ~/Sites/powerline
 git clone https://github.com/powerline/fonts.git ~/Sites/powerline/fonts --depth=1
 bash ~/Sites/powerline/fonts/install.sh
 
+# Configure iterm profiles
+curl -sSL https://raw.githubusercontent.com/bernadinm/mac-config/master/iterm-profile.json > ~/Library/Application\ Support/iTerm2/DynamicProfiles/iterm-profile.json
+
 # bash_profile
 cat > ~/.bash_profile <<'EOF'
 set -o ignoreeof
