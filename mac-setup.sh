@@ -172,7 +172,7 @@ export PATH=$PATH:$HOME/Library/Python/2.7/bin:$HOME/Library/Python/3.7/bin
 powerline-daemon -q
 POWERLINE_BASH_CONTINUATION=1
 POWERLINE_BASH_SELECT=1
-. /Users/mbernadin/Library/Python/**/lib/python/site-packages/powerline/bindings/bash/powerline.sh
+. ~/Library/Python/**/lib/python/site-packages/powerline/bindings/bash/powerline.sh
 
 # gpg ssh configs
 export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
