@@ -78,6 +78,9 @@ Plugin 'vim-airline/vim-airline-themes'
 set rtp+=/usr/local/opt/fzf
 Plugin 'junegunn/fzf.vim'
 map ; :Files<CR>
+
+" Easy toggle off list and number
+map <C-l> :set number! list!<CR>
 " Vundle Config End --
 EOF
 
