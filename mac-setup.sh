@@ -38,6 +38,9 @@ xcode-select --install
 git clone https://github.com/rust-lang/rust.vim ~/.vim/pack/plugins/start/rust.vim # rust.vim
 git clone https://github.com/hashivim/vim-terraform.git ~/.vim/pack/plugins/start/terraform.vim # terraform.vim
 
+# Vim vundle install
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+
 # vim_rc
 cat > ~/.vimrc <<'EOF'
 filetype plugin indent on
@@ -46,6 +49,26 @@ set list
 set number
 set ff=unix
 highlight LineNr ctermfg=darkgrey
+
+" Vundle Config Below --
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'git://git.wincent.com/command-t.git'
+Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+
+# jsonnet plugin
+Plugin 'google/vim-jsonnet'
+
+" Vundle Config End --
 EOF
 
 # Enable locate
