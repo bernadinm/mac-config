@@ -81,6 +81,11 @@ map ; :Files<CR>
 
 " Easy toggle off list and number
 map <C-l> :set number! list!<CR>
+
+" Vim folderNav
+Plugin 'scrooloose/nerdtree'
+map <C-o> :NERDTreeToggle<CR>
+
 " Vundle Config End --
 EOF
 
