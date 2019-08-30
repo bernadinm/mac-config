@@ -68,6 +68,9 @@ Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 # jsonnet plugin
 Plugin 'google/vim-jsonnet'
 
+" vim-arline / powerline
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 " Vundle Config End --
 EOF
 
