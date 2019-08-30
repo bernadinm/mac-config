@@ -40,6 +40,8 @@ git clone https://github.com/hashivim/vim-terraform.git ~/.vim/pack/plugins/star
 
 # Vim vundle install
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+# Vim vundle packages
+brew install fzf
 
 # vim_rc
 cat > ~/.vimrc <<'EOF'
@@ -71,6 +73,11 @@ Plugin 'google/vim-jsonnet'
 " vim-arline / powerline
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+
+" Add homebrew fzf to the vim path:
+set rtp+=/usr/local/opt/fzf
+Plugin 'junegunn/fzf.vim'
+map ; :Files<CR>
 " Vundle Config End --
 EOF
 
