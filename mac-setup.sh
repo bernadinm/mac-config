@@ -51,6 +51,7 @@ syntax on
 set list
 set number
 set ff=unix
+set hlsearch
 highlight LineNr ctermfg=darkgrey
 
 " Vundle Config Below --
