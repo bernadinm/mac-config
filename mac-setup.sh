@@ -52,6 +52,7 @@ set list
 set number
 set ff=unix
 set hlsearch
+set cursorline
 highlight LineNr ctermfg=darkgrey
 
 " Vundle Config Below --
