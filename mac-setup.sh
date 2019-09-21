@@ -73,7 +73,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'git://git.wincent.com/command-t.git'
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 
-# jsonnet plugin
+" jsonnet plugin
 Plugin 'google/vim-jsonnet'
 
 " vim-arline / powerline
