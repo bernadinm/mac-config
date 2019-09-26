@@ -127,6 +127,7 @@ mas install 595191960 # CopuCliip
 
 # brew cask list | xargs -L1
 brew cask install google-chrome
+brew cask install brave-browser
 brew cask install iterm2
 brew cask install spectacle
 brew cask install flux
@@ -150,6 +151,7 @@ brew cask reinstall --force virtualbox
 # Open Apps
 open -a spectacle
 open -a google-chrome
+open -a brave-browser
 open -a flux
 open -a atom
 open -a slack
