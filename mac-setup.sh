@@ -14,6 +14,7 @@ brew install pinentry-mac
 brew install tmate
 brew install lynx
 brew install jq
+brew install yq
 brew install trash
 brew install azure-cli
 brew install awscli
