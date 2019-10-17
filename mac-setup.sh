@@ -15,6 +15,7 @@ brew install tmate
 brew install lynx
 brew install jq
 brew install python-yq
+brew install node; npm i -g json-to-js
 brew install trash
 brew install azure-cli
 brew install awscli
@@ -103,6 +104,7 @@ go get -u -v github.com/heptio/sonobuoy
 curl -O https://raw.githubusercontent.com/spinnaker/halyard/master/install/macos/InstallHalyard.sh
 sudo bash InstallHalyard.sh
 brew install kubernetes-cli
+brew install kubernetes-helm
 curl -sL -o kubefed.tgz https://github.com/kubernetes-sigs/kubefed/releases/download/v0.1.0-rc5/kubefedctl-0.1.0-rc5-darwin-amd64.tgz
 tar -xvf kubefed.tgz
 chmod +x kubefedctl
