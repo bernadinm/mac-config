@@ -22,7 +22,7 @@ brew install awscli
 brew install mas
 brew install watch
 brew install aria2
-brew install go
+brew install go dep
 brew install rustup
 brew install tree
 brew intsall packer
