@@ -29,6 +29,7 @@ brew intsall packer
 brew install shellcheck
 brew install git-crypt
 brew install glide
+brew install ykman
 brew install bash-completion
 brew install speedtest-cli
 brew install python3 && sudo easy_install pip
