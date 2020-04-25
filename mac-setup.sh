@@ -148,6 +148,7 @@ brew cask install zoomus
 brew cask install ngrok
 brew cask install java
 brew cask install visual-studio-code
+brew cask install lunar
 
 # GoTo Security and Priacy on Mac and allow Oracle
 brew cask reinstall --force virtualbox
