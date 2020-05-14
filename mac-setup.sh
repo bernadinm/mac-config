@@ -30,6 +30,7 @@ brew install shellcheck
 brew install git-crypt
 brew install glide
 brew install ykman
+brew install deno
 brew install bash-completion
 brew install speedtest-cli
 brew install python3 && sudo easy_install pip
@@ -209,6 +210,7 @@ alias k='kubectl'
 export GOPATH="${HOME}/.go"
 export GOROOT="$(brew --prefix golang)/libexec"
 export PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin"
+export PATH="$PATH:${HOME}/.deno/bin"
 test -d "${GOPATH}" || mkdir "${GOPATH}"
 test -d "${GOPATH}/src/github.com" || mkdir -p "${GOPATH}/src/github.com"
 
