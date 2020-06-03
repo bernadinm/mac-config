@@ -131,6 +131,7 @@ mas install 688211836  # easyres
 mas install 595191960  # CopuCliip
 mas install 1176895641 # SparkEmail
 mas install 1054607607 # helium
+mas install 1319778037 # iStats menus
 
 # brew cask list | xargs -L1
 brew cask install google-chrome
