@@ -153,6 +153,7 @@ brew cask install ngrok
 brew cask install java
 brew cask install visual-studio-code
 brew cask install lunar
+brew cask install krisp
 
 # GoTo Security and Priacy on Mac and allow Oracle
 brew cask reinstall --force virtualbox
