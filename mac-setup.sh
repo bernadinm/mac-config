@@ -114,6 +114,9 @@ chmod +x kubefedctl
 rm kubefed.tgz
 mv kubefedctl /usr/local/bin/.
 
+# Golang utils
+go get -u github.com/mgechev/revive
+
 # GPG Config
 # gpg-agent profile
 cat > ~/.gnupg/gpg-agent.conf <<'EOF'
