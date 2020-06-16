@@ -17,6 +17,7 @@ brew install jq
 brew install python-yq
 brew install node; npm i -g json-to-js
 brew install trash
+brew install iproute2mac
 brew install azure-cli
 brew install awscli
 brew install mas
