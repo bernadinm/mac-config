@@ -31,6 +31,7 @@ brew install shellcheck
 brew install git-crypt
 brew install glide
 brew install ykman
+brew install htop
 brew install deno
 brew install bash-completion
 brew install speedtest-cli
