@@ -23,6 +23,7 @@ brew install awscli
 brew install mas
 brew install watch
 brew install aria2
+brew install vault
 brew install go dep
 brew install rustup
 brew install tree
