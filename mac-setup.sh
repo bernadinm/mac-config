@@ -160,7 +160,7 @@ brew cask install java
 brew cask install visual-studio-code
 brew cask install lunar
 brew cask install krisp
-brew cask install vlc
+brew cask install iina
 
 # GoTo Security and Priacy on Mac and allow Oracle
 brew cask reinstall --force virtualbox
