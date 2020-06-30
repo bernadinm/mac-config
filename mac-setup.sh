@@ -105,6 +105,8 @@ sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.locate.plist
 # Kubernetes related binaries
 brew install jsonnet
 brew install ksonnet/tap/ks
+brew tap instrumenta/instrumenta
+brew install kubeval
 go get -u -v github.com/heptio/sonobuoy
 curl -O https://raw.githubusercontent.com/spinnaker/halyard/master/install/macos/InstallHalyard.sh
 sudo bash InstallHalyard.sh
