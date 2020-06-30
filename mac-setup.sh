@@ -14,7 +14,7 @@ brew install pinentry-mac
 brew install tmate
 brew install lynx
 brew install jq
-brew install python-yq
+brew install python-yq yamllint
 brew install node; npm i -g json-to-js
 brew install trash
 brew install iproute2mac
