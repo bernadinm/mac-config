@@ -34,6 +34,7 @@ brew install glide
 brew install ykman
 brew install htop
 brew install deno
+brew install gnu-tar # for building kubernetes
 brew install bash-completion
 brew install speedtest-cli
 brew install python3 && sudo easy_install pip
