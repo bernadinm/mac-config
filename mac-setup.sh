@@ -165,6 +165,7 @@ brew cask install lunar
 brew cask install krisp
 brew cask install iina
 brew cask install canon-eos-utility
+brew cask install adobe-creative-cloud
 
 # GoTo Security and Priacy on Mac and allow Oracle
 brew cask reinstall --force virtualbox
