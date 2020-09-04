@@ -108,6 +108,11 @@ brew install jsonnet
 brew install ksonnet/tap/ks
 brew tap instrumenta/instrumenta
 brew install kubeval
+brew install tmux
+brew install krew
+export PATH="${PATH}:${HOME}/.krew/bin"
+kubectl krew install view-utilization
+kubectl krew install unused-volumes
 go get -u -v github.com/heptio/sonobuoy
 curl -O https://raw.githubusercontent.com/spinnaker/halyard/master/install/macos/InstallHalyard.sh
 sudo bash InstallHalyard.sh
