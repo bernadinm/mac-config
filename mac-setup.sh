@@ -113,6 +113,7 @@ brew install krew
 export PATH="${PATH}:${HOME}/.krew/bin"
 kubectl krew install view-utilization
 kubectl krew install unused-volumes
+kubectl krew install konfig
 go get -u -v github.com/heptio/sonobuoy
 curl -O https://raw.githubusercontent.com/spinnaker/halyard/master/install/macos/InstallHalyard.sh
 sudo bash InstallHalyard.sh
