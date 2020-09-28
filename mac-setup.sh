@@ -127,6 +127,7 @@ mv kubefedctl /usr/local/bin/.
 
 # Golang utils
 go get -u github.com/mgechev/revive
+go get github.com/blushft/go-diagrams
 
 # GPG Config
 # gpg-agent profile
