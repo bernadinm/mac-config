@@ -1,0 +1,28 @@
+# This is Git's per-user configuration file.
+[user]
+        name = 
+        email = 
+        signingkey = 
+[commit]
+        gpgsign = true
+[core]
+        editor = /usr/bin/vim
+        excludesfile = /Users/mbernadin/.gitignore_global
+        autocrlf = input
+[filter "trimWhitespace"]
+        clean = git-stripspace
+[gpg]
+        program = gpg
+[hub]
+        protocol = git
+[push]
+        default = current
+[alias]
+    cleanup = "!git branch --merged | grep  -v '\\*\\|master\\|develop' | xargs -n 1 git branch -d"
+    tree = "!git log --all --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+
+[url "ssh://git@git.abs.sh:"]
+        insteadOf = https://git.abs.sh/
+        insteadOf = http://git.abs.sh/
+[pull]
+  ff = only
