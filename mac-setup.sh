@@ -153,29 +153,29 @@ mas install 1054607607 # helium
 mas install 1319778037 # iStats menus
 
 # brew cask list | xargs -L1
-brew cask install google-chrome
-brew cask install brave-browser
-brew cask install iterm2
-brew cask install spectacle
-brew cask install flux
-brew cask install virtualbox
-brew cask install atom
-brew cask install marshallofsound-google-play-music-player
-brew cask install slack
-brew cask install docker
-brew cask install cloudapp
-brew cask install google-cloud-sdk
-brew cask install vagrant
-brew cask install virtualbox # this will fail (mac security settings)
-brew cask install zoomus
-brew cask install ngrok
-brew cask install java
-brew cask install visual-studio-code
-brew cask install lunar
-brew cask install krisp
-brew cask install iina
-brew cask install canon-eos-utility
-brew cask install adobe-creative-cloud
+brew install --cask google-chrome
+brew install --cask brave-browser
+brew install --cask iterm2
+brew install --cask spectacle
+brew install --cask flux
+brew install --cask virtualbox
+brew install --cask atom
+brew install --cask marshallofsound-google-play-music-player
+brew install --cask slack
+brew install --cask docker
+brew install --cask cloudapp
+brew install --cask google-cloud-sdk
+brew install --cask vagrant
+brew install --cask virtualbox # this will fail (mac security settings)
+brew install --cask zoomus
+brew install --cask ngrok
+brew install --cask java
+brew install --cask visual-studio-code
+brew install --cask lunar
+brew install --cask krisp
+brew install --cask iina
+brew install --cask canon-eos-utility
+brew install --cask adobe-creative-cloud
 brew install --cask fanny
 
 # GoTo Security and Priacy on Mac and allow Oracle
