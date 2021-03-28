@@ -208,6 +208,10 @@ defaults write NSGlobalDomain InitialKeyRepeat -int 13
 defaults write -g com.apple.trackpad.scaling 1.5
 defaults write com.apple.systemuiserver "NSStatusItem Visible com.apple.menuextra.bluetooth" -bool true
 
+# Mac ScreenSaver
+brew install --cask grid-clock
+defaults -currentHost write com.apple.screensaver moduleDict -dict moduleName GridClock path /Users/$USER/Library/Screen\ Savers/Grid\ Clock.saver type 0
+
 # System Setup
 mkdir -p ~/Sites
 
