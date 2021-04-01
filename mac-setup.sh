@@ -177,6 +177,7 @@ brew install --cask iina
 brew install --cask canon-eos-utility
 brew install --cask adobe-creative-cloud
 brew install --cask fanny
+brew install --cask grammarly
 brew install --cask remarkable # https://github.com/Homebrew/homebrew-cask/pull/102776 (my PR)
 
 # GoTo Security and Priacy on Mac and allow Oracle
