@@ -4,7 +4,7 @@ brew tap caskroom/cask
 
 # xargs brew install < brew.txt
 brew update
-brew install spectacle
+brew install slate
 brew install terraform
 brew install wget
 brew install git gti
@@ -273,6 +273,119 @@ gpgconf --launch gpg-agent
 
 # Lynx ENV
 export WWW_HOME=https://duckduckgo.com/lite/
+EOF
+
+# slate profile
+cat > ~/.slate <<'EOF'
+# Configuration options
+config defaultToCurrentScreen true
+config modalEscapeKey esc
+config nudgePercentOf screenSize
+config resizePercentOf screenSize
+config windowHintsShowIcons true
+config windowHintsIgnoreHiddenWindows false
+config windowHintsSpread true
+config windowHintsSpreadSearchWidth 200
+config windowHintsSpreadSearchHeight 200
+
+#--------------------------------------------------------------------
+# Aliases
+#--------------------------------------------------------------------
+# Modal key
+alias modal-key w,shift,cmd
+
+# Some apps
+alias app-browser 'Google Chrome'
+alias app-irc 'Textual'
+alias app-music 'Finder'
+alias app-terminal 'iTerm'
+
+# Easy helpers for long variable names...
+alias sox screenOriginX
+alias soy screenOriginY
+alias ssx screenSizeX
+alias ssy screenSizeY
+
+# Positioning aliases
+alias full move ${sox};${soy} ${ssx};${ssy}
+alias left-half move ${sox};${soy} ${ssx}/2+1;${ssy}
+alias right-half move ${sox}+${ssx}/2;${soy} ${ssx}/2;${ssy}
+alias top-half move ${sox};${soy} ${ssx};${ssy}/2
+alias bot-half move ${sox};${soy}+${ssy}/2 ${ssx};${ssy}/2
+alias top-left-corner move ${sox};${soy} ${ssx}/2;${ssy}/2
+alias top-right-corner move ${sox}+${ssx}/2;${soy} ${ssx}/2;${ssy}/2
+alias bot-left-corner move ${sox};${soy}+${ssy}/2 ${ssx}/2;${ssy}/2
+alias bot-right-corner move ${sox}+${ssx}/2;${soy}+${ssy}/2 ${ssx}/2;${ssy}/2
+
+#--------------------------------------------------------------------
+# Layouts
+#--------------------------------------------------------------------
+# This layout is used with one screen
+layout 1coding 'Google Chrome':REPEAT ${full}
+layout 1coding 'iTerm':REPEAT ${full}
+layout 1coding 'Finder':REPEAT ${full}
+layout 1coding 'Textual':REPEAT move ${sox}+550;${soy}+75 800;575
+layout 1coding 'Tweetbot' move ${ssx}-480-40;${soy} 480;${ssy}
+
+# This layout is used with two screens
+layout 2coding 'Firefox':REPEAT move ${sox}+387;${soy}+100 1800;1200 0
+layout 2coding 'Google Chrome':REPEAT move ${sox}+387;${soy}+100 1800;1200 0
+layout 2coding 'iTerm':REPEAT ${full} 0
+layout 2coding 'Finder':REPEAT ${full} 1
+layout 2coding 'Textual':REPEAT move ${sox}+1200;${soy}+20 800;575 0
+layout 2coding 'Tweetbot' move ${ssx}-480-40;${soy}+20 480;1000 0
+
+# This layout is used with two screens where the big screen is on the right
+layout 2rcoding 'Firefox':REPEAT move ${sox}+387;${soy}+100 1800;1200 1
+layout 2rcoding 'Google Chrome':REPEAT move ${sox}+387;${soy}+100 1800;1200 1
+layout 2rcoding 'iTerm':REPEAT ${full} 1
+layout 2rcoding 'Finder':REPEAT ${full} 0
+layout 2rcoding 'Textual':REPEAT move ${sox}+1200;${soy}+20 800;575 1
+layout 2rcoding 'Tweetbot' move ${ssx}-480-40;${soy}+20 480;1000 1
+
+# Push Bindings
+bind right:ctrl;cmd  push right bar-resize:screenSizeX/3
+bind left:ctrl;cmd   push left  bar-resize:screenSizeX/3
+bind up:ctrl;cmd     push up    bar-resize:screenSizeY/2
+bind down:ctrl;cmd   push down  bar-resize:screenSizeY/2
+
+# Nudge Bindings
+bind right:shift;cmd nudge +10% +0
+bind left:shift;cmd  nudge -10% +0
+bind up:shift;cmd    nudge +0   -10%
+bind down:shift;cmd  nudge +0   +10%
+
+#--------------------------------------------------------------------
+# Bindings
+#--------------------------------------------------------------------
+# Activate layouts, this is all done via modal-keys
+bind 1:${modal-key} sequence layout 1coding
+bind 2:${modal-key} sequence layout 2coding
+bind 3:${modal-key} sequence layout 2rcoding
+
+# Focus windows in certain directions
+bind h:cmd,shift focus left
+bind l:cmd,shift focus right
+bind j:cmd,shift focus down
+bind k:cmd,shift focus up
+
+# Move windows to certain locations on the screen
+bind f:cmd,ctrl ${full}
+bind h:cmd,ctrl ${left-half}
+bind l:cmd,ctrl ${right-half}
+bind j:cmd,ctrl ${bot-half}
+bind k:cmd,ctrl ${top-half}
+bind u:cmd,ctrl ${top-left-corner}
+bind i:cmd,ctrl ${top-right-corner}
+bind n:cmd,ctrl ${bot-left-corner}
+bind m:cmd,ctrl ${bot-right-corner}
+
+# Focus helpers
+bind b:e,cmd focus ${app-browser}
+bind i:e,cmd focus ${app-irc}
+bind m:e,cmd focus ${app-music}
+bind t:e,cmd focus ${app-terminal}
+bind /:e,cmd hint
 EOF
 
 # iTerm2 settings
