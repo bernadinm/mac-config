@@ -9,7 +9,7 @@ brew install terraform
 brew install wget
 brew install git gti
 brew install hub
-brew install gpg2
+brew install gpg-suite
 brew install pinentry-mac
 brew install tmate
 brew install lynx
