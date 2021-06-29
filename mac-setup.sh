@@ -40,6 +40,7 @@ brew install speedtest-cli
 brew install youtube-dl
 brew install yggdrasil
 brew install coreutils
+brew install websocat
 brew install the_silver_searcher
 brew install python3 && sudo easy_install pip
 brew install bash; sudo bash -c 'echo /usr/local/bin/bash >> /etc/shells'
