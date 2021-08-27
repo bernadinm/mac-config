@@ -47,6 +47,9 @@ brew install the_silver_searcher
 brew install rg
 brew install python3 && sudo easy_install pip
 brew install bash; sudo bash -c 'echo /usr/local/bin/bash >> /etc/shells'
+brew tap saulpw/vd # visidata
+brew install visidata
+
 
 # Install xcode
 xcode-select --install
