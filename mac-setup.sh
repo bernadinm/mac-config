@@ -45,6 +45,7 @@ brew install gopass
 brew install notion
 brew install the_silver_searcher
 brew install rg
+brew install sd
 brew install python3 && sudo easy_install pip
 brew install bash; sudo bash -c 'echo /usr/local/bin/bash >> /etc/shells'
 brew tap saulpw/vd # visidata
