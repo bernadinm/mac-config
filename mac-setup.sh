@@ -46,6 +46,7 @@ brew install notion
 brew install the_silver_searcher
 brew install rg
 brew install sd
+brew install fd
 brew install python3 && sudo easy_install pip
 brew install bash; sudo bash -c 'echo /usr/local/bin/bash >> /etc/shells'
 brew tap saulpw/vd # visidata
@@ -187,6 +188,7 @@ brew install --cask canon-eos-utility
 brew install --cask adobe-creative-cloud
 brew install --cask fanny
 brew install --cask grammarly
+brew install --cask amethyst
 brew install --cask remarkable # https://github.com/Homebrew/homebrew-cask/pull/102776 (my PR)
 
 # GoTo Security and Priacy on Mac and allow Oracle
