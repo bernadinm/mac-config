@@ -53,7 +53,14 @@ brew install bash; sudo bash -c 'echo /usr/local/bin/bash >> /etc/shells'
 brew tap saulpw/vd # visidata
 brew install visidata
 brew install wtfutil
+brew install romkatv/powerlevel10k/powerlevel10k
+echo "source $(brew --prefix)/opt/powerlevel10k/powerlevel10k.zsh-theme" >>~/.zshrc
 
+# Install Fonts
+curl -so ~/Library/Fonts/MesloLGF-Regular.ttf "https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf"
+curl -so ~/Library/Fonts/MesloLGF-Bold.ttf "https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold.ttf
+curl -so ~/Library/Fonts/MesloLGF-Italic.ttf "https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Italic.ttf"
+curl -so ~/Library/Fonts/MesloLGF-Bold-Italic.ttf "https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf"
 
 # Install xcode
 xcode-select --install
