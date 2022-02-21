@@ -58,6 +58,7 @@ brew install romkatv/powerlevel10k/powerlevel10k
 brew tap aws/tap
 brew install aws-sam-cli
 echo "source $(brew --prefix)/opt/powerlevel10k/powerlevel10k.zsh-theme" >>~/.zshrc
+brew install zsh-syntax-highlighting
 
 # Install Fonts
 curl -so ~/Library/Fonts/MesloLGF-Regular.ttf "https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf"
