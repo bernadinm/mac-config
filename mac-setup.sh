@@ -124,6 +124,7 @@ Plugin 'scrooloose/nerdtree'
 map <C-o> :NERDTreeToggle<CR>
 
 " Vundle Config End --
+syntax on
 EOF
 
 # Enable locate
