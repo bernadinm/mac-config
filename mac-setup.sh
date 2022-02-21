@@ -20,6 +20,7 @@ brew install trash
 brew install iproute2mac
 brew install azure-cli
 brew install awscli
+brew install serverless
 brew install mas
 brew install watch
 brew install aria2
