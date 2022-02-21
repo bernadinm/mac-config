@@ -236,18 +236,18 @@ brew install --cask aerial
 defaults -currentHost write com.apple.screensaver moduleDict -dict moduleName GridClock path /Users/$USER/Library/Screen\ Savers/Aerial.saver type 0
 
 # System Setup
-mkdir -p ~/Sites
+mkdir -p ~/git
 
 # Configure Pureline
-# mkdir -p ~/Sites/chris-marsh
-# git clone https://github.com/chris-marsh/pureline.git ~/Sites/chris-marsh/pureline
-# cp ~/Sites/chris-marsh/pureline/configs/powerline_full_256col.conf ~/.pureline.conf
+# mkdir -p ~/git/chris-marsh
+# git clone https://github.com/chris-marsh/pureline.git ~/git/chris-marsh/pureline
+# cp ~/git/chris-marsh/pureline/configs/powerline_full_256col.conf ~/.pureline.conf
 pip3.7 install --user powerline-status
 
 # Install Powerline Font
-mkdir -p ~/Sites/powerline
-git clone https://github.com/powerline/fonts.git ~/Sites/powerline/fonts --depth=1
-bash ~/Sites/powerline/fonts/install.sh
+mkdir -p ~/git/powerline
+git clone https://github.com/powerline/fonts.git ~/git/powerline/fonts --depth=1
+bash ~/git/powerline/fonts/install.sh
 
 # Configure iterm profiles
 curl -sSL https://raw.githubusercontent.com/bernadinm/mac-config/master/iterm-profile.json > ~/Library/Application\ Support/iTerm2/DynamicProfiles/iterm-profile.json
@@ -259,10 +259,10 @@ alias d='bws && eval $(bws -s -env)'
 alias mp='until nc $(VBoxManage guestproperty get "NixOS" "/VirtualBox/GuestInfo/Net/0/V4/IP" | cut -d" " -f2) 22 -G 1 -w 0; do echo Connecting...; sleep 10; done && ssh mb@$(VBoxManage guestproperty get "NixOS" "/VirtualBox/GuestInfo/Net/0/V4/IP" | cut -d" " -f2)'
 alias mx='Vboxmanage startvm "NixOS" --type headless && VBoxManage controlvm "NixOS" addencpassword "NixOS" -'
 alias mm='VBoxManage controlvm NixOS poweroff NixOS'
-alias up='find ~/Sites/DevOps/ -name terraform.tfstate | xargs -L1 ls -l | sort -rk5 --numeric-sort | awk "{if( \$5 > 10000) print \$0}"'
+alias up='find ~/git/DevOps/ -name terraform.tfstate | xargs -L1 ls -l | sort -rk5 --numeric-sort | awk "{if( \$5 > 10000) print \$0}"'
 alias k='kubectl'
-alias pp='cd $HOME/Sites/kfix/ddcctl; ./ddcctl -d 1 -i 18 >/dev/null; cd - ; # hdmi-2'
-alias ww='cd $HOME/Sites/kfix/ddcctl; ./ddcctl -d 1 -i 27 >/dev/null; cd - ; # USB-C'
+alias pp='cd $HOME/git/kfix/ddcctl/bin/release; ./ddcctl -d 1 -i 18 >/dev/null; cd - ; # hdmi-2'
+alias ww='cd $HOME/git/kfix/ddcctl/bin/release; ./ddcctl -d 1 -i 27 >/dev/null; cd - ; # USB-C'
 alias gpom='git pull origin master'
 alias gPom='git push origin master'
 alias gcb='git checkout -b '
@@ -277,6 +277,7 @@ alias gd='git diff'
 alias gs='git status'
 alias gds='git diff --staged'
 alias gau='git add -u'
+alias ll='ls -la'
 export GOPATH="${HOME}/.go"
 export GOROOT="$(brew --prefix golang)/libexec"
 export PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin"
@@ -289,10 +290,6 @@ test -d "${GOPATH}/src/github.com" || mkdir -p "${GOPATH}/src/github.com"
 
 # git-crypt util: workaround for https://github.com/AGWA/git-crypt/issues/39
 alias gpgcryptusers='pushd .git-crypt/keys/default/0; for file in *.gpg; do echo "${file} : " && git log -- ${file} | sed -n 9p; done; popd'
-
-#if [ "$TERM" != "linux" ]; then
-#    source ~/Sites/chris-marsh/pureline/pureline ~/.pureline.conf
-#fi
 
 # Powerline
 export PATH=$PATH:$HOME/Library/Python/2.7/bin:$HOME/Library/Python/3.7/bin
