@@ -34,6 +34,7 @@ brew install git-crypt
 brew install glide
 brew install ykman
 brew install htop
+brew install glances
 brew install deno
 brew install gnu-tar # for building kubernetes
 brew install bash-completion
