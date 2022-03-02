@@ -34,6 +34,7 @@ brew install git-crypt
 brew install glide
 brew install ykman
 brew install htop
+brew install gtop
 brew install glances
 brew install deno
 brew install gnu-tar # for building kubernetes
@@ -50,6 +51,7 @@ brew install rg
 brew install sd
 brew install fd
 brew install navi
+brew install go-jira
 brew install graphviz
 brew install python3 && sudo easy_install pip
 brew install bash; sudo bash -c 'echo /usr/local/bin/bash >> /etc/shells'
