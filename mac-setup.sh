@@ -65,6 +65,7 @@ echo "source $(brew --prefix)/opt/powerlevel10k/powerlevel10k.zsh-theme" >>~/.zs
 brew install zsh-syntax-highlighting
 brew tap sstadick/hck
 brew install hck
+brew install kind
 
 # Install Fonts
 curl -so ~/Library/Fonts/MesloLGF-Regular.ttf "https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf"
