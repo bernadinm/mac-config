@@ -437,6 +437,9 @@ defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "$HOME/dotf
 # Tell iTerm2 to use the custom preferences in the directory
 defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
 
+# Ensure notifications stay longer
+defaults write com.apple.notificationcenterui bannerTime 5
+
 # Install VBoxExtention
 LatestVirtualBoxVersion=$(curl http://download.virtualbox.org/virtualbox/LATEST.TXT) && curl -O "http://download.virtualbox.org/virtualbox/${LatestVirtualBoxVersion}/Oracle_VM_VirtualBox_Extension_Pack-${LatestVirtualBoxVersion}.vbox-extpack"
 diff <(shasum5.18 -a 256 Oracle_VM_VirtualBox_Extension_Pack-"${LatestVirtualBoxVersion}".vbox-extpack) <(curl https://www.virtualbox.org/download/hashes/"${LatestVirtualBoxVersion}"/SHA256SUMS | grep Oracle_VM_VirtualBox_Extension_Pack-"${LatestVirtualBoxVersion}".vbox-extpack | sed 's/\*/ /g')
