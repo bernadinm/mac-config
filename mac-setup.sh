@@ -67,6 +67,7 @@ brew install zsh-syntax-highlighting
 brew tap sstadick/hck
 brew install hck
 brew install kind
+brew install glow
 
 # Install Fonts
 curl -so ~/Library/Fonts/MesloLGF-Regular.ttf "https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf"
@@ -436,7 +437,7 @@ EOF
 # Specify the preferences directory
 defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "$HOME/dotfiles/iterm2" # TODO(mbernadin): find correct file and source it before running
 # Tell iTerm2 to use the custom preferences in the directory
-defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
+defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool false
 
 # Ensure notifications stay longer
 defaults write com.apple.notificationcenterui bannerTime 5
