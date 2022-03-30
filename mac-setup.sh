@@ -266,8 +266,20 @@ bash ~/git/powerline/fonts/install.sh
 # Configure iterm profiles
 curl -sSL https://raw.githubusercontent.com/bernadinm/mac-config/master/iterm-profile.json > ~/Library/Application\ Support/iTerm2/DynamicProfiles/iterm-profile.json
 
-# bash_profile
-cat > ~/.bash_profile <<'EOF'
+# zshrc
+cat > ~/.zshrc <<'EOF'
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
+source /usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
 set -o ignoreeof
 alias d='bws && eval $(bws -s -env)'
 alias mp='until nc $(VBoxManage guestproperty get "NixOS" "/VirtualBox/GuestInfo/Net/0/V4/IP" | cut -d" " -f2) 22 -G 1 -w 0; do echo Connecting...; sleep 10; done && ssh mb@$(VBoxManage guestproperty get "NixOS" "/VirtualBox/GuestInfo/Net/0/V4/IP" | cut -d" " -f2)'
@@ -275,6 +287,7 @@ alias mx='Vboxmanage startvm "NixOS" --type headless && VBoxManage controlvm "Ni
 alias mm='VBoxManage controlvm NixOS poweroff NixOS'
 alias up='find ~/git/DevOps/ -name terraform.tfstate | xargs -L1 ls -l | sort -rk5 --numeric-sort | awk "{if( \$5 > 10000) print \$0}"'
 alias k='kubectl'
+alias j='jira'
 alias pp='cd $HOME/git/kfix/ddcctl/bin/release; ./ddcctl -d 1 -i 18 >/dev/null; cd - ; # hdmi-2'
 alias ww='cd $HOME/git/kfix/ddcctl/bin/release; ./ddcctl -d 1 -i 27 >/dev/null; cd - ; # USB-C'
 alias gpom='git pull origin master'
@@ -292,25 +305,14 @@ alias gs='git status'
 alias gds='git diff --staged'
 alias gau='git add -u'
 alias ll='ls -la'
+alias login='aws-auth-onelogin -u miguel.bernadin@circle.com'
 export GOPATH="${HOME}/.go"
 export GOROOT="$(brew --prefix golang)/libexec"
 export PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin"
 export PATH="$PATH:${HOME}/.deno/bin"
+export EDITOR="vim" # gh cli
 test -d "${GOPATH}" || mkdir "${GOPATH}"
 test -d "${GOPATH}/src/github.com" || mkdir -p "${GOPATH}/src/github.com"
-
-# Bash Completion Enable
-[ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
-
-# git-crypt util: workaround for https://github.com/AGWA/git-crypt/issues/39
-alias gpgcryptusers='pushd .git-crypt/keys/default/0; for file in *.gpg; do echo "${file} : " && git log -- ${file} | sed -n 9p; done; popd'
-
-# Powerline
-export PATH=$PATH:$HOME/Library/Python/2.7/bin:$HOME/Library/Python/3.7/bin
-powerline-daemon -q
-POWERLINE_BASH_CONTINUATION=1
-POWERLINE_BASH_SELECT=1
-. ~/Library/Python/**/lib/python/site-packages/powerline/bindings/bash/powerline.sh
 
 # gpg ssh configs
 export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
@@ -318,6 +320,16 @@ gpgconf --launch gpg-agent
 
 # Lynx ENV
 export WWW_HOME=https://duckduckgo.com/lite/
+
+# zsh-autosuggestion
+# brew install zsh-autosuggestions
+source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# Adding GNU make auto complete
+zstyle ':completion:*:*:make:*' tag-order 'targets'
+
+# Enable flag completion
+autoload -U compinit && compinit
 EOF
 
 # slate profile
