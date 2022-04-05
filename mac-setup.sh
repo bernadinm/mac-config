@@ -62,6 +62,7 @@ brew install wtfutil
 brew install romkatv/powerlevel10k/powerlevel10k
 brew tap aws/tap
 brew install aws-sam-cli
+brew install --cask session-manager-plugin
 echo "source $(brew --prefix)/opt/powerlevel10k/powerlevel10k.zsh-theme" >>~/.zshrc
 brew install zsh-syntax-highlighting
 brew tap sstadick/hck
