@@ -176,8 +176,6 @@ curl -sSL corp.gpg.miguel.engineer  | gpg --import -
 cat > ~/.gnupg/gpg-agent.conf <<EOF
 pinentry-program $(brew --prefix pinentry)/bin/pinentry
 enable-ssh-support
-write-env-file
-use-standard-socket
 default-cache-ttl 600
 max-cache-ttl 7200
 EOF
