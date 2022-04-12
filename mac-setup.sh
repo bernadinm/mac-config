@@ -172,8 +172,8 @@ curl -sSL corp.gpg.miguel.engineer  | gpg --import -
 
 # GPG Config
 # gpg-agent profile
-cat > ~/.gnupg/gpg-agent.conf <<'EOF'
-pinentry-program /opt/homebrew/bin//pinentry
+cat > ~/.gnupg/gpg-agent.conf <<EOF
+pinentry-program $(brew --prefix pinentry)/bin/pinentry
 enable-ssh-support
 write-env-file
 use-standard-socket
