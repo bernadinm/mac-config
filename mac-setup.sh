@@ -442,6 +442,52 @@ bind t:e,cmd focus ${app-terminal}
 bind /:e,cmd hint
 EOF
 
+cat > ~/.gitconfig <<'EOF'
+# This is Git's per-user configuration file.
+[user]
+        name = Miguel Bernadin
+        email = Miguel.Bernadin@gmail.com
+        signingkey = CF5D41CEBEE4D53C9FC738E2915FA8A6391DDAC6
+[commit]
+        gpgsign = true
+[core]
+        editor = /run/current-system/sw/bin/vim
+        pager = delta
+[filter "trimWhitespace"]
+        clean = git-stripspace
+[gpg]
+        program = gpg2
+[hub]
+        protocol = git
+[alias]
+        cleanup = "!git branch --merged | grep  -v '\\*\\|master\\|develop' | xargs -n 1 git branch -d"
+
+[push]
+        default = current
+[credential "https://github.com"]
+        helper = !/run/current-system/sw/bin/gh auth git-credential
+
+[interactive]
+        diffFilter = delta --color-only --features=interactive
+
+[delta]
+        features = decorations
+        line-numbers = true
+        side-by-side = true
+
+[delta "interactive"]
+        keep-plus-minus-markers = false
+
+[delta "decorations"]
+        commit-decoration-style = blue ol
+        commit-style = raw
+        file-style = omit
+        hunk-header-decoration-style = blue box
+        hunk-header-file-style = red
+        hunk-header-line-number-style = "#067a00"
+        hunk-header-style = file line-number syntax
+EOF
+
 # iTerm2 settings
 # Specify the preferences directory
 defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "$HOME/dotfiles/iterm2" # TODO(mbernadin): find correct file and source it before running
