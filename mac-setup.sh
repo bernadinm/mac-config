@@ -8,8 +8,7 @@ brew update
 brew install slate
 brew install terraform
 brew install wget
-brew install git gti
-brew install hub
+brew install git gti gh
 brew install gpg-suite
 brew install pinentry-mac
 brew install tmate
