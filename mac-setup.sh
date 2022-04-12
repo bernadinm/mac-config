@@ -70,7 +70,7 @@ brew install hck
 brew install kind
 brew install glow
 brew install zsh-autosuggestions
-brew install pass
+brew install pass pass-otp
 
 # Install Fonts
 curl -so ~/Library/Fonts/MesloLGF-Regular.ttf 'https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf'
