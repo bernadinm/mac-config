@@ -51,6 +51,7 @@ brew install rg
 brew install sd
 brew install fd
 brew install navi
+brew install tldr
 brew install pwgen
 brew install go-jira
 brew install graphviz
