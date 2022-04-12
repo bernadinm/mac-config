@@ -1,4 +1,5 @@
-#!/bin/bash
+#!/bin/zsh
+
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 brew tap caskroom/cask
 
@@ -63,18 +64,18 @@ brew install romkatv/powerlevel10k/powerlevel10k
 brew tap aws/tap
 brew install aws-sam-cli
 brew install --cask session-manager-plugin
-echo "source $(brew --prefix)/opt/powerlevel10k/powerlevel10k.zsh-theme" >>~/.zshrc
 brew install zsh-syntax-highlighting
 brew tap sstadick/hck
 brew install hck
 brew install kind
 brew install glow
+brew install zsh-autosuggestions
 
 # Install Fonts
-curl -so ~/Library/Fonts/MesloLGF-Regular.ttf "https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf"
-curl -so ~/Library/Fonts/MesloLGF-Bold.ttf "https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold.ttf
-curl -so ~/Library/Fonts/MesloLGF-Italic.ttf "https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Italic.ttf"
-curl -so ~/Library/Fonts/MesloLGF-Bold-Italic.ttf "https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf"
+curl -so ~/Library/Fonts/MesloLGF-Regular.ttf 'https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf'
+curl -so ~/Library/Fonts/MesloLGF-Bold.ttf 'https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold.ttf'
+curl -so ~/Library/Fonts/MesloLGF-Italic.ttf 'https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Italic.ttf'
+curl -so ~/Library/Fonts/MesloLGF-Bold-Italic.ttf 'https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf'
 
 # Install xcode
 xcode-select --install
@@ -106,9 +107,9 @@ filetype off                  " required
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
+
 " alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
-
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'git://git.wincent.com/command-t.git'
@@ -125,7 +126,6 @@ Plugin 'vim-airline/vim-airline-themes'
 set rtp+=/usr/local/opt/fzf
 Plugin 'junegunn/fzf.vim'
 map ; :Files<CR>
-
 " Easy toggle off list and number
 map <C-l> :set number! list!<CR>
 
@@ -166,10 +166,14 @@ mv kubefedctl /usr/local/bin/.
 go get -u github.com/mgechev/revive
 go get github.com/blushft/go-diagrams
 
+# Key Imports
+curl -sSL gpg.miguel.engineer  | gpg --import -
+curl -sSL corp.gpg.miguel.engineer  | gpg --import -
+
 # GPG Config
 # gpg-agent profile
 cat > ~/.gnupg/gpg-agent.conf <<'EOF'
-pinentry-program /usr/local/bin/pinentry-mac
+pinentry-program /opt/homebrew/bin//pinentry
 enable-ssh-support
 write-env-file
 use-standard-socket
@@ -178,13 +182,6 @@ max-cache-ttl 7200
 EOF
 
 killall gpg-agent
-
-# mas (apple store install tool)
-mas install 688211836  # easyres
-mas install 595191960  # CopuCliip
-mas install 1176895641 # SparkEmail
-mas install 1054607607 # helium
-mas install 1319778037 # iStats menus
 
 # brew cask list | xargs -L1
 brew install --cask google-chrome
@@ -276,8 +273,6 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-source /usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme
-
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
@@ -307,10 +302,11 @@ alias gds='git diff --staged'
 alias gau='git add -u'
 alias ll='ls -la'
 alias login='aws-auth-onelogin -u miguel.bernadin@circle.com'
-export GOPATH="${HOME}/.go"
-export GOROOT="$(brew --prefix golang)/libexec"
 export PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin"
 export PATH="$PATH:${HOME}/.deno/bin"
+export PATH="$PATH:/opt/homebrew/bin/"
+export GOPATH="${HOME}/.go"
+export GOROOT="$(brew --prefix golang)/libexec"
 export EDITOR="vim" # gh cli
 test -d "${GOPATH}" || mkdir "${GOPATH}"
 test -d "${GOPATH}/src/github.com" || mkdir -p "${GOPATH}/src/github.com"
@@ -325,6 +321,7 @@ export WWW_HOME=https://duckduckgo.com/lite/
 # zsh-autosuggestion
 # brew install zsh-autosuggestions
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $(brew --prefix)/opt/powerlevel10k/powerlevel10k.zsh-theme
 
 # Adding GNU make auto complete
 zstyle ':completion:*:*:make:*' tag-order 'targets'
@@ -454,27 +451,3 @@ defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool false
 
 # Ensure notifications stay longer
 defaults write com.apple.notificationcenterui bannerTime 5
-
-# Install VBoxExtention
-LatestVirtualBoxVersion=$(curl http://download.virtualbox.org/virtualbox/LATEST.TXT) && curl -O "http://download.virtualbox.org/virtualbox/${LatestVirtualBoxVersion}/Oracle_VM_VirtualBox_Extension_Pack-${LatestVirtualBoxVersion}.vbox-extpack"
-diff <(shasum5.18 -a 256 Oracle_VM_VirtualBox_Extension_Pack-"${LatestVirtualBoxVersion}".vbox-extpack) <(curl https://www.virtualbox.org/download/hashes/"${LatestVirtualBoxVersion}"/SHA256SUMS | grep Oracle_VM_VirtualBox_Extension_Pack-"${LatestVirtualBoxVersion}".vbox-extpack | sed 's/\*/ /g')
-sudo VBoxManage extpack install --replace Oracle_VM_VirtualBox_Extension_Pack-"${LatestVirtualBoxVersion}".vbox-extpack
-
-# Download NixOS VirtualBox
-curl -o ~/Downloads/nixos-18.09.1985.749a3a0d00b-x86_64-linux.ova https://d3g5gsiof5omrk.cloudfront.net/nixos/18.09/nixos-18.09.1985.749a3a0d00b/nixos-18.09.1985.749a3a0d00b-x86_64-linux.ova
-# Import NixOS OVA
-vboxmanage import --vsys 0 --vmname NixOS --cpus 2 --memory 8192  ~/Downloads/nixos-18.09.1985.749a3a0d00b-x86_64-linux.ova
-# Select Networking
-VBoxManage modifyvm NixOS --nic1 bridged
-VBoxManage modifyvm NixOS --natnet1 en0
-# Disable audio
-VBoxManage modifyvm NixOS --audio none
-# Add Encryption
-VBoxManage encryptmedium "$(VBoxManage showvminfo NixOS | grep 'SATA.*UUID' | sed 's/^.*UUID: \(.*\))/\1/')" --newpassword - --cipher "AES-XTS256-PLAIN64" --newpasswordid "NixOS"
-
-# VirtualBox Expansion
-#FILENAME_PATH=$(find ~/VirtualBox\ VMs/ -name nixos-*.vmdk)
-#VBoxManage clonehd "$FILENAME_PATH" "$(echo $FILENAME_PATH | sed 's/\.vmdk/.vdi/g')" --format vdi
-#VBoxManage modifyhd "$(echo $FILENAME_PATH | sed 's/\.vmdk/.vdi/g')"  --resize 51200
-#VBoxManage clonehd  "$(echo $FILENAME_PATH | sed 's/\.vmdk/.vdi/g')"  "$(echo $FILENAME_PATH | sed 's/\.vmdk/.vmdk2/g')" --format vmdk
-#mv "$(echo $FILENAME_PATH | sed 's/\.vmdk/.vmdk2/g')"  "$(echo $FILENAME_PATH)"
