@@ -174,7 +174,7 @@ curl -sSL corp.gpg.miguel.engineer  | gpg --import -
 # GPG Config
 # gpg-agent profile
 cat > ~/.gnupg/gpg-agent.conf <<EOF
-pinentry-program $(brew --prefix pinentry)/bin/pinentry
+pinentry-program /opt/homebrew/bin/pinentry-mac
 enable-ssh-support
 default-cache-ttl 600
 max-cache-ttl 7200
@@ -310,9 +310,16 @@ export EDITOR="vim" # gh cli
 test -d "${GOPATH}" || mkdir "${GOPATH}"
 test -d "${GOPATH}/src/github.com" || mkdir -p "${GOPATH}/src/github.com"
 
-# gpg ssh configs
-export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
-gpgconf --launch gpg-agent
+export GPG_TTY=$(tty)
+# Add the following to your shell init to set up gpg-agent automatically for every shell
+if [ -n "$(pgrep gpg-agent)" ]; then
+    # source ~/.gnupg/.gpg-agent-info
+    export GPG_AGENT_INFO
+    export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+else
+    #gpg-connect-agent /bye
+    eval $(gpg-agent --daemon)
+fi
 
 # Lynx ENV
 export WWW_HOME=https://duckduckgo.com/lite/
