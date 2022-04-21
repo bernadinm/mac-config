@@ -304,6 +304,7 @@ alias login='aws-auth-onelogin -u miguel.bernadin@circle.com'
 export PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin"
 export PATH="$PATH:${HOME}/.deno/bin"
 export PATH="$PATH:/opt/homebrew/bin/"
+export PATH="$PATH:${HOME}/Library/Python/3.8/bin"
 export GOPATH="${HOME}/.go"
 export GOROOT="$(brew --prefix golang)/libexec"
 export EDITOR="vim" # gh cli
