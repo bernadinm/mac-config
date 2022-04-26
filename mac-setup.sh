@@ -300,7 +300,7 @@ alias gs='git status'
 alias gds='git diff --staged'
 alias gau='git add -u'
 alias ll='ls -la'
-alias login='aws-auth-onelogin -u miguel.bernadin@circle.com'
+alias login='awsacct'
 export PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin"
 export PATH="$PATH:${HOME}/.deno/bin"
 export PATH="$PATH:/opt/homebrew/bin/"
@@ -335,6 +335,18 @@ zstyle ':completion:*:*:make:*' tag-order 'targets'
 
 # Enable flag completion
 autoload -U compinit && compinit
+
+awsacct () {
+  declare -A accounts=([dev]=12345678910 [space]=12345678910)
+  if [ $# -eq 0 ]
+  then
+    aws configure list-profiles
+  else
+    export AWS_PROFILE=$1
+    export AWS_DEFAULT_PROFILE=$1
+    sh -c "echo $(pass otp onelogin-otp) | aws-auth-onelogin -u $(pass onelogin-username) --onelogin-password \"$(pass onelogin)\" -p $1 --aws-role-name CFN-Circle-SSO-Ops --aws-account-id ${accounts[$1]}"
+  fi
+}
 EOF
 
 # slate profile
