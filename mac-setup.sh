@@ -19,7 +19,6 @@ brew install node; npm i -g json-to-js state-machine-cat serverless-offline-pyth
 brew install trash
 brew install iproute2mac
 brew install azure-cli
-brew install awscli
 brew install serverless
 brew install mas
 brew install watch
@@ -61,9 +60,6 @@ brew tap saulpw/vd # visidata
 brew install visidata
 brew install wtfutil
 brew install romkatv/powerlevel10k/powerlevel10k
-brew tap aws/tap
-brew install aws-sam-cli
-brew install --cask session-manager-plugin
 brew install zsh-syntax-highlighting
 brew tap sstadick/hck
 brew install hck
@@ -71,6 +67,13 @@ brew install kind
 brew install glow
 brew install zsh-autosuggestions
 brew install pass pass-otp
+
+# AWS CLI UTIL
+brew install awscli
+brew tap aws/tap
+brew install aws-sam-cli
+brew install --cask session-manager-plugin
+sudo curl -Lo /usr/local/bin/ecs-cli https://amazon-ecs-cli.s3.amazonaws.com/ecs-cli-darwin-amd64-latest; sudo chmod +x /usr/local/bin/ecs-cli
 
 # Install Fonts
 curl -so ~/Library/Fonts/MesloLGF-Regular.ttf 'https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf'
