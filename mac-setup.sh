@@ -8,7 +8,7 @@ brew update
 brew install slate
 brew install terraform
 brew install wget
-brew install git gti gh
+brew install git gti gh; gh extension install meiji163/gh-notify
 brew install gpg-suite
 brew install pinentry-mac
 brew install tmate
