@@ -8,7 +8,7 @@ brew update
 brew install slate
 brew install terraform
 brew install wget
-brew install git gti gh; gh extension install meiji163/gh-notify
+brew install git gti gh
 brew install gpg-suite
 brew install pinentry-mac
 brew install tmate
@@ -74,6 +74,10 @@ brew tap aws/tap
 brew install aws-sam-cli
 brew install --cask session-manager-plugin
 sudo curl -Lo /usr/local/bin/ecs-cli https://amazon-ecs-cli.s3.amazonaws.com/ecs-cli-darwin-amd64-latest; sudo chmod +x /usr/local/bin/ecs-cli
+
+# GH extentions install
+gh extension install meiji163/gh-notify
+gh extension install dlvhdr/gh-dash
 
 # Install Fonts
 curl -so ~/Library/Fonts/MesloLGF-Regular.ttf 'https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf'
