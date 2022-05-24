@@ -67,6 +67,7 @@ brew install kind
 brew install glow
 brew install zsh-autosuggestions
 brew install pass pass-otp
+brew install ffmpeg
 
 # AWS CLI UTIL
 brew install awscli
@@ -266,6 +267,8 @@ pip3.7 install --user powerline-status
 mkdir -p ~/git/powerline
 git clone https://github.com/powerline/fonts.git ~/git/powerline/fonts --depth=1
 bash ~/git/powerline/fonts/install.sh
+brew tap homebrew/cask-fonts
+brew install --cask font-3270-nerd-font
 
 # Configure iterm profiles
 curl -sSL https://raw.githubusercontent.com/bernadinm/mac-config/master/iterm-profile.json > ~/Library/Application\ Support/iTerm2/DynamicProfiles/iterm-profile.json
