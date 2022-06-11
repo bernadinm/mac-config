@@ -68,6 +68,8 @@ brew install glow
 brew install zsh-autosuggestions
 brew install pass pass-otp
 brew install ffmpeg
+brew install saulpw/vd/visidata
+
 
 # AWS CLI UTIL
 brew install awscli
@@ -218,6 +220,7 @@ brew install --cask fanny
 brew install --cask grammarly
 brew install --cask amethyst
 brew install --cask remarkable # https://github.com/Homebrew/homebrew-cask/pull/102776 (my PR)
+brew install --cask grammarly
 
 # GoTo Security and Priacy on Mac and allow Oracle
 brew cask reinstall --force virtualbox
