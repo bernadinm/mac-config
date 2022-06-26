@@ -69,6 +69,7 @@ brew install zsh-autosuggestions
 brew install pass pass-otp
 brew install ffmpeg
 brew install saulpw/vd/visidata
+brew install bmon
 
 
 # AWS CLI UTIL
