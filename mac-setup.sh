@@ -55,6 +55,7 @@ brew install pwgen
 brew install go-jira
 brew install graphviz
 brew install python3 && sudo easy_install pip
+brew install maven
 brew install bash; sudo bash -c 'echo /usr/local/bin/bash >> /etc/shells'
 brew tap saulpw/vd # visidata
 brew install visidata
