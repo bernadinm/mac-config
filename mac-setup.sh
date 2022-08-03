@@ -73,6 +73,7 @@ brew install saulpw/vd/visidata
 brew install bmon
 brew install cue
 brew install dagger
+brew install lsusb
 
 
 # AWS CLI UTIL
