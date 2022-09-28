@@ -74,6 +74,7 @@ brew install bmon
 brew install cue
 brew install dagger
 brew install lsusb
+brew install mermaid-cli # diagram as code
 
 
 # AWS CLI UTIL
