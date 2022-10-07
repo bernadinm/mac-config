@@ -75,6 +75,7 @@ brew install cue
 brew install dagger
 brew install lsusb
 brew install mermaid-cli # diagram as code
+brew install helix # hx vim alternative
 
 
 # AWS CLI UTIL
