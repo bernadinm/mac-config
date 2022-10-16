@@ -229,6 +229,7 @@ brew install --cask amethyst
 brew install --cask remarkable # https://github.com/Homebrew/homebrew-cask/pull/102776 (my PR)
 brew install --cask grammarly
 brew install --cask thunderbird
+brew install --cask rustdesk
 
 # GoTo Security and Priacy on Mac and allow Oracle
 brew cask reinstall --force virtualbox
