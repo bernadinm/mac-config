@@ -77,6 +77,7 @@ brew install lsusb
 brew install mermaid-cli # diagram as code
 brew install helix # hx vim alternative
 brew install hubble
+brew install cilium-cli
 
 
 # AWS CLI UTIL
