@@ -169,6 +169,7 @@ export PATH="${PATH}:${HOME}/.krew/bin"
 kubectl krew install view-utilization
 kubectl krew install unused-volumes
 kubectl krew install konfig
+kubectl krew install sniff
 go get -u -v github.com/heptio/sonobuoy
 curl -O https://raw.githubusercontent.com/spinnaker/halyard/master/install/macos/InstallHalyard.sh
 sudo bash InstallHalyard.sh
@@ -230,6 +231,7 @@ brew install --cask remarkable # https://github.com/Homebrew/homebrew-cask/pull/
 brew install --cask grammarly
 brew install --cask thunderbird
 brew install --cask rustdesk
+brew install --cask wireshark
 
 # GoTo Security and Priacy on Mac and allow Oracle
 brew cask reinstall --force virtualbox
