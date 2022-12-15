@@ -167,6 +167,7 @@ brew tap instrumenta/instrumenta
 brew install kubeval
 brew install tmux
 brew install krew
+brew install k9s
 export PATH="${PATH}:${HOME}/.krew/bin"
 kubectl krew install view-utilization
 kubectl krew install unused-volumes
