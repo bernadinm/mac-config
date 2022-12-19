@@ -38,6 +38,7 @@ brew install glances
 brew install deno
 brew install gnu-tar # for building kubernetes
 brew install bash-completion
+brew install zsh-completions
 brew install speedtest-cli
 brew install youtube-dl
 brew install yggdrasil
