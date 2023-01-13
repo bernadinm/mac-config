@@ -81,6 +81,7 @@ brew install helix # hx vim alternative
 brew install hubble
 brew install cilium-cli
 brew install ddgr
+brew install cloudflared
 
 
 # AWS CLI UTIL
