@@ -86,6 +86,7 @@ brew install cloudflared
 
 # AWS CLI UTIL
 brew install awscli
+brew install awscurl # performs requests to AWS services with request signing using curl interface
 brew tap aws/tap
 brew install aws-sam-cli
 brew install --cask session-manager-plugin
