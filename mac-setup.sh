@@ -82,6 +82,7 @@ brew install hubble
 brew install cilium-cli
 brew install ddgr
 brew install cloudflared
+brew install glow # markdown reader
 
 
 # AWS CLI UTIL
