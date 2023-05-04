@@ -83,6 +83,7 @@ brew install cilium-cli
 brew install ddgr
 brew install cloudflared
 brew install glow # markdown reader
+brew install ncdu # ncurses disk usage
 
 
 # AWS CLI UTIL
