@@ -85,6 +85,7 @@ brew install cloudflared
 brew install glow # markdown reader
 brew install ncdu # ncurses disk usage
 brew install zoxide # cd alternative
+brew install exa # ls alternative
 
 
 # AWS CLI UTIL
