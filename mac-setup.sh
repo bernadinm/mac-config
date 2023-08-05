@@ -87,6 +87,7 @@ brew install ncdu # ncurses disk usage
 brew install zoxide # cd alternative
 brew install exa # ls alternative
 brew install opa # open policy agent
+brew install git-annex # git annex
 
 
 # AWS CLI UTIL
