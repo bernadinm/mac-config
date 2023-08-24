@@ -97,6 +97,7 @@ brew tap aws/tap
 brew install aws-sam-cli
 brew install --cask session-manager-plugin
 sudo curl -Lo /usr/local/bin/ecs-cli https://amazon-ecs-cli.s3.amazonaws.com/ecs-cli-darwin-amd64-latest; sudo chmod +x /usr/local/bin/ecs-cli
+brew install --cask amazon-chime
 
 # GH extentions install
 gh extension install meiji163/gh-notify
