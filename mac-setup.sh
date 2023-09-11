@@ -89,6 +89,7 @@ brew install exa # ls alternative
 brew install opa # open policy agent
 brew install git-annex # git annex
 brew install pre-commit # git commit hooks
+brew install nap # code snippet save tool
 
 
 # AWS CLI UTIL
