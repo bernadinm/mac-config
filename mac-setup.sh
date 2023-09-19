@@ -85,7 +85,7 @@ brew install cloudflared
 brew install glow # markdown reader
 brew install ncdu # ncurses disk usage
 brew install zoxide # cd alternative
-brew install exa # ls alternative
+brew install exa eza # ls alternative
 brew install opa # open policy agent
 brew install git-annex # git annex
 brew install pre-commit # git commit hooks
