@@ -91,6 +91,7 @@ brew install git-annex # git annex
 brew install pre-commit # git commit hooks
 brew install nap # code snippet save tool
 brew install z # cd alternative
+brew install pandoc # cd alternative
 
 
 # AWS CLI UTIL
