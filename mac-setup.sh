@@ -3,6 +3,9 @@
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 brew tap caskroom/cask
 
+brew tap homebrew/cask-fonts
+brew search '/font-.*-nerd-font/' | awk '{ print $1 }' | xargs -I{} brew install --cask {} || true
+
 # xargs brew install < brew.txt
 brew update
 brew install slate
@@ -62,7 +65,6 @@ brew install bash; sudo bash -c 'echo /usr/local/bin/bash >> /etc/shells'
 brew tap saulpw/vd # visidata
 brew install visidata
 brew install wtfutil
-brew install romkatv/powerlevel10k/powerlevel10k
 brew install zsh-syntax-highlighting
 brew tap sstadick/hck
 brew install hck
@@ -106,12 +108,6 @@ brew install --cask amazon-chime
 # GH extentions install
 gh extension install meiji163/gh-notify
 gh extension install dlvhdr/gh-dash
-
-# Install Fonts
-curl -so ~/Library/Fonts/MesloLGF-Regular.ttf 'https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf'
-curl -so ~/Library/Fonts/MesloLGF-Bold.ttf 'https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold.ttf'
-curl -so ~/Library/Fonts/MesloLGF-Italic.ttf 'https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Italic.ttf'
-curl -so ~/Library/Fonts/MesloLGF-Bold-Italic.ttf 'https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf'
 
 # Install xcode
 xcode-select --install
@@ -296,11 +292,6 @@ mkdir -p ~/git
 # cp ~/git/chris-marsh/pureline/configs/powerline_full_256col.conf ~/.pureline.conf
 pip3.7 install --user powerline-status
 
-# Install Powerline Font
-mkdir -p ~/git/powerline
-git clone https://github.com/powerline/fonts.git ~/git/powerline/fonts --depth=1
-bash ~/git/powerline/fonts/install.sh
-brew tap homebrew/cask-fonts
 brew install --cask font-3270-nerd-font
 
 # Install Starship Prompt
@@ -311,16 +302,6 @@ curl -sSL https://raw.githubusercontent.com/bernadinm/mac-config/master/iterm-pr
 
 # zshrc
 cat > ~/.zshrc <<'EOF'
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
 set -o ignoreeof
 alias d='bws && eval $(bws -s -env)'
 alias mp='until nc $(VBoxManage guestproperty get "NixOS" "/VirtualBox/GuestInfo/Net/0/V4/IP" | cut -d" " -f2) 22 -G 1 -w 0; do echo Connecting...; sleep 10; done && ssh mb@$(VBoxManage guestproperty get "NixOS" "/VirtualBox/GuestInfo/Net/0/V4/IP" | cut -d" " -f2)'
@@ -383,7 +364,6 @@ export WWW_HOME=https://duckduckgo.com/lite/
 # zsh-autosuggestion
 # brew install zsh-autosuggestions
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-source $(brew --prefix)/opt/powerlevel10k/powerlevel10k.zsh-theme
 
 # Adding GNU make auto complete
 zstyle ':completion:*:*:make:*' tag-order 'targets'
@@ -577,3 +557,6 @@ defaults write com.apple.notificationcenterui bannerTime 5
 
 # Add import personal cmds to navi
 navi repo add git@github.com:bernadinm/cheats
+
+# Add enable starship prompt
+eval "$(starship init zsh)"
