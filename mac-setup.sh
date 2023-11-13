@@ -303,6 +303,9 @@ bash ~/git/powerline/fonts/install.sh
 brew tap homebrew/cask-fonts
 brew install --cask font-3270-nerd-font
 
+# Install Starship Prompt
+curl -sS https://starship.rs/install.sh | sh
+
 # Configure iterm profiles
 curl -sSL https://raw.githubusercontent.com/bernadinm/mac-config/master/iterm-profile.json > ~/Library/Application\ Support/iTerm2/DynamicProfiles/iterm-profile.json
 
@@ -571,3 +574,6 @@ defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool false
 
 # Ensure notifications stay longer
 defaults write com.apple.notificationcenterui bannerTime 5
+
+# Add import personal cmds to navi
+navi repo add git@github.com:bernadinm/cheats
