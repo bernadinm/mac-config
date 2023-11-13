@@ -330,6 +330,9 @@ alias pp='cd $HOME/git/waydabber/m1ddc; ./m1ddc set input 18; cd - ; # hdmi-2'
 alias ww='cd $HOME/git/waydabber/m1ddc; ./m1ddc set input 27; cd - ; # USB-C'
 alias gpom='git pull origin master'
 alias gPom='git push origin master'
+alias ga='git add '
+alias gcm='git commit -m '
+alias gcma='git commit --amend -m '
 alias gcb='git checkout -b '
 alias gc='git checkout'
 alias grh='git reset --hard'
@@ -340,17 +343,23 @@ alias gp='git pull'
 alias gph='git pull --hard'
 alias gd='git diff'
 alias gs='git status'
+alias gsp='git stash pop'
 alias gds='git diff --staged'
 alias gau='git add -u'
-alias ll='ls -la'
-alias login='awsacct'
+alias g='cd ~/git'
+alias n='cd ~/git/bernadinm/nix-config'
+alias vi='hx'
+alias ll='exa -l'
+alias ls='exa'
+alias k='kubectl'
+alias lsaltr='exa -al --sort=oldest --reverse'
 export PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin"
 export PATH="$PATH:${HOME}/.deno/bin"
 export PATH="$PATH:/opt/homebrew/bin/"
 export PATH="$PATH:${HOME}/Library/Python/3.8/bin"
 export GOPATH="${HOME}/.go"
 export GOROOT="$(brew --prefix golang)/libexec"
-export EDITOR="vim" # gh cli
+export EDITOR="hx" # gh cli
 test -d "${GOPATH}" || mkdir "${GOPATH}"
 test -d "${GOPATH}/src/github.com" || mkdir -p "${GOPATH}/src/github.com"
 
@@ -390,6 +399,9 @@ awsacct () {
     sh -c "echo $(pass otp onelogin-otp) | aws-auth-onelogin -u $(pass onelogin-username) --onelogin-password \"$(pass onelogin)\" -p $1 --aws-role-name CFN-Circle-SSO-Ops --aws-account-id ${accounts[$1]}"
   fi
 }
+
+# Adding Navi shortcut to zsh
+eval "$(navi widget zsh)"
 EOF
 
 # slate profile
