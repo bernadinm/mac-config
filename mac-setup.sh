@@ -383,6 +383,9 @@ awsacct () {
   fi
 }
 
+# Configuring starship theme
+starship preset tokyo-night -o ~/.config/starship.toml
+
 # Add enable starship prompt
 eval "$(starship init zsh)"
 
