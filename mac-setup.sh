@@ -383,6 +383,9 @@ awsacct () {
   fi
 }
 
+# Add enable starship prompt
+eval "$(starship init zsh)"
+
 # Adding Navi shortcut to zsh
 eval "$(navi widget zsh)"
 EOF
@@ -557,6 +560,3 @@ defaults write com.apple.notificationcenterui bannerTime 5
 
 # Add import personal cmds to navi
 navi repo add git@github.com:bernadinm/cheats
-
-# Add enable starship prompt
-eval "$(starship init zsh)"
