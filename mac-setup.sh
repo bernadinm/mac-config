@@ -94,6 +94,7 @@ brew install pre-commit # git commit hooks
 brew install nap # code snippet save tool
 brew install z # cd alternative
 brew install pandoc # cd alternative
+brew install mods # ai prompt cli
 
 
 # AWS CLI UTIL
