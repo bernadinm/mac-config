@@ -65,12 +65,13 @@ brew install bash; sudo bash -c 'echo /usr/local/bin/bash >> /etc/shells'
 brew tap saulpw/vd # visidata
 brew install visidata
 brew install wtfutil
-brew install zsh-syntax-highlighting
 brew tap sstadick/hck
 brew install hck
 brew install kind
 brew install glow
+brew install zsh-syntax-highlighting
 brew install zsh-autosuggestions
+brew install zsh-autocomplete
 brew install pass pass-otp
 brew install ffmpeg
 brew install saulpw/vd/visidata
@@ -369,6 +370,7 @@ export WWW_HOME=https://duckduckgo.com/lite/
 # zsh-autosuggestion
 # brew install zsh-autosuggestions
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Adding GNU make auto complete
 zstyle ':completion:*:*:make:*' tag-order 'targets'
