@@ -202,8 +202,11 @@ go get -u github.com/mgechev/revive
 go get github.com/blushft/go-diagrams
 
 # Key Imports
-curl -sSL gpg.miguel.engineer  | gpg --import -
-curl -sSL corp.gpg.miguel.engineer  | gpg --import -
+curl -sSL gpg.miguel.engineer | gpg --import -
+echo "CF5D41CEBEE4D53C9FC738E2915FA8A6391DDAC6:6:" | gpg --import-ownertrust
+
+# Work Key Imports
+curl -sSL corp.gpg.miguel.engineer | gpg --import -
 
 # GPG Config
 # gpg-agent profile
