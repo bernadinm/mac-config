@@ -95,6 +95,7 @@ brew install nap # code snippet save tool
 brew install z # cd alternative
 brew install pandoc # cd alternative
 brew install mods # ai prompt cli
+brew install poetry # python package tool
 
 
 # AWS CLI UTIL
