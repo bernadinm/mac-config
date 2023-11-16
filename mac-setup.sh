@@ -98,6 +98,7 @@ brew install pandoc # cd alternative
 brew install mods # ai prompt cli
 brew install poetry # python package tool
 brew install logseq obsidian # knowledge graph
+brew install notion # note taking app
 
 
 # AWS CLI UTIL
@@ -339,6 +340,7 @@ alias gds='git diff --staged'
 alias gau='git add -u'
 alias g='cd ~/git'
 alias n='cd ~/git/bernadinm/nix-config'
+alias b='cd ~/git/bernadinm/'
 alias vi='hx'
 alias ll='exa -l'
 alias ls='exa'
