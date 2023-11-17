@@ -99,7 +99,7 @@ brew install mods # ai prompt cli
 brew install poetry # python package tool
 brew install logseq obsidian # knowledge graph
 brew install notion # note taking app
-brew install psql popsql # postgresql utils
+brew install postgresql popsql # postgresql utils
 
 
 # AWS CLI UTIL
