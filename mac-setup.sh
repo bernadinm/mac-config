@@ -99,6 +99,7 @@ brew install mods # ai prompt cli
 brew install poetry # python package tool
 brew install logseq obsidian # knowledge graph
 brew install notion # note taking app
+brew install psql popsql # postgresql utils
 
 
 # AWS CLI UTIL
@@ -345,6 +346,7 @@ alias vi='hx'
 alias ll='exa -l'
 alias ls='exa'
 alias k='kubectl'
+alias mods='OPENAI_API_KEY=$(pass openai.com/$(hostname)/api-key) mods'
 alias lsaltr='exa -al --sort=oldest --reverse'
 export PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin"
 export PATH="$PATH:${HOME}/.deno/bin"
