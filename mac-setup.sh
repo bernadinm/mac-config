@@ -100,6 +100,7 @@ brew install poetry # python package tool
 brew install logseq obsidian # knowledge graph
 brew install notion # note taking app
 brew install postgresql popsql # postgresql utils
+brew install protonvpn # vpn
 
 
 # AWS CLI UTIL
