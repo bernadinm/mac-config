@@ -257,6 +257,7 @@ brew install --cask grammarly
 brew install --cask thunderbird
 brew install --cask rustdesk
 brew install --cask wireshark
+brew install --cask tla-plus-toolbox # tla+ formal verificaiton
 
 # GoTo Security and Priacy on Mac and allow Oracle
 brew cask reinstall --force virtualbox
