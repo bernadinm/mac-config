@@ -406,6 +406,10 @@ eval "$(starship init zsh)"
 
 # Adding Navi shortcut to zsh
 eval "$(navi widget zsh)"
+
+# GCP gcloud utils
+source "$(brew --prefix)/share/google-cloud-sdk/path.zsh.inc"
+source "$(brew --prefix)/share/google-cloud-sdk/completion.zsh.inc"
 EOF
 
 # slate profile
