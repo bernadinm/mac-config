@@ -323,17 +323,17 @@ alias k='kubectl'
 alias j='jira'
 alias pp='cd $HOME/git/waydabber/m1ddc; ./m1ddc set input 18; cd - ; # hdmi-2'
 alias ww='cd $HOME/git/waydabber/m1ddc; ./m1ddc set input 27; cd - ; # USB-C'
-alias gpom='git pull origin master'
-alias gPom='git push origin master'
+alias gpom='git pull origin master || git pull origin main'
+alias gPom='git push origin master || git push origin main'
 alias ga='git add '
 alias gcm='git commit -m '
 alias gcma='git commit --amend -m '
 alias gcb='git checkout -b '
 alias gc='git checkout'
 alias grh='git reset --hard'
-alias grhom='git reset --hard origin/master'
+alias grhom='git reset --hard origin/master || git reset --hard origin/main'
 alias gfa='git fetch --all'
-alias grom='git rebase origin/master'
+alias grom='git rebase origin/master || git rebasae origin/main'
 alias gp='git pull'
 alias gph='git pull --hard'
 alias gd='git diff'
@@ -539,7 +539,7 @@ cat > ~/.gitconfig <<'EOF'
 [hub]
         protocol = git
 [alias]
-        cleanup = "!git branch --merged | grep  -v '\\*\\|master\\|develop' | xargs -n 1 git branch -d"
+        cleanup = "!git branch --merged | grep  -v '\\*\\|master\\|main\\|develop' | xargs -n 1 git branch -d"
 
 [push]
         default = current
