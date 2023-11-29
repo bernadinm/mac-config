@@ -101,6 +101,7 @@ brew install logseq obsidian # knowledge graph
 brew install notion # note taking app
 brew install postgresql popsql # postgresql utils
 brew install protonvpn # vpn
+brew install actionlint # GHA linter
 
 
 # AWS CLI UTIL
@@ -228,6 +229,7 @@ killall gpg-agent
 # brew cask list | xargs -L1
 brew install --cask google-chrome
 brew install --cask brave-browser
+brew install --cask firefox
 brew install --cask iterm2
 brew install --cask spectacle
 brew install --cask flux
