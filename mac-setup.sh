@@ -536,12 +536,12 @@ cat > ~/.gitconfig <<'EOF'
 [commit]
         gpgsign = true
 [core]
-        editor = /run/current-system/sw/bin/vim
+        editor = /opt/homebrew/bin/hx
         pager = delta
 [filter "trimWhitespace"]
         clean = git-stripspace
 [gpg]
-        program = gpg2
+        program = /usr/local/MacGPG2/bin/gpg2
 [hub]
         protocol = git
 [alias]
@@ -550,7 +550,7 @@ cat > ~/.gitconfig <<'EOF'
 [push]
         default = current
 [credential "https://github.com"]
-        helper = !/run/current-system/sw/bin/gh auth git-credential
+        helper = !/opt/homebrew/bin/gh auth git-credential
 
 [interactive]
         diffFilter = delta --color-only --features=interactive
