@@ -17,7 +17,7 @@ brew install pinentry-mac
 brew install tmate
 brew install lynx
 brew install jq
-brew install python-yq yamllint
+brew install python-yq yamllint pylint
 brew install node; npm i -g json-to-js state-machine-cat serverless-offline-python
 brew install trash
 brew install iproute2mac
