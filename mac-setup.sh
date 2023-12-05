@@ -261,6 +261,9 @@ brew install --cask rustdesk
 brew install --cask wireshark
 brew install --cask tla-plus-toolbox # tla+ formal verificaiton
 
+# npm packages
+npm install --global fast-cli # speedtest
+
 # GoTo Security and Priacy on Mac and allow Oracle
 brew cask reinstall --force virtualbox
 
