@@ -1,124 +1,6 @@
 #!/bin/zsh
 
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-brew tap caskroom/cask
-
-brew tap homebrew/cask-fonts
-brew search '/font-.*-nerd-font/' | awk '{ print $1 }' | xargs -I{} brew install --cask {} || true
-
-# xargs brew install < brew.txt
-brew update
-brew install slate
-brew install terraform
-brew install wget
-brew install git gti gh
-brew install gpg-suite
-brew install pinentry-mac
-brew install tmate
-brew install lynx
-brew install jq
-brew install python-yq yamllint pylint
-brew install node; npm i -g json-to-js state-machine-cat serverless-offline-python
-brew install trash
-brew install iproute2mac
-brew install azure-cli
-brew install serverless
-brew install mas
-brew install watch
-brew install aria2
-brew install vault
-brew install go dep
-brew install rustup
-brew install tree
-brew intsall packer
-brew install shellcheck
-brew install git-crypt
-brew install glide
-brew install ykman
-brew install htop
-brew install gtop
-brew install glances
-brew install deno
-brew install gnu-tar # for building kubernetes
-brew install bash-completion
-brew install zsh-completions
-brew install speedtest-cli
-brew install youtube-dl
-brew install yggdrasil
-brew install coreutils
-brew install websocat
-brew install gopass
-brew install notion
-brew install the_silver_searcher
-brew install rg
-brew install sd
-brew install fd
-brew install navi
-brew install tldr
-brew install pwgen
-brew install go-jira
-brew install graphviz
-brew install python3 && sudo easy_install pip
-brew install rust
-brew install maven
-brew install bash; sudo bash -c 'echo /usr/local/bin/bash >> /etc/shells'
-brew tap saulpw/vd # visidata
-brew install visidata
-brew install wtfutil
-brew tap sstadick/hck
-brew install hck
-brew install kind
-brew install glow
-brew install zsh-syntax-highlighting
-brew install zsh-autosuggestions
-brew install zsh-autocomplete
-brew install pass pass-otp
-brew install ffmpeg
-brew install saulpw/vd/visidata
-brew install bmon
-brew install cue
-brew install dagger
-brew install lsusb
-brew install mermaid-cli # diagram as code
-brew install helix # hx vim alternative
-brew install hubble
-brew install cilium-cli
-brew install ddgr
-brew install cloudflared
-brew install glow # markdown reader
-brew install ncdu # ncurses disk usage
-brew install zoxide # cd alternative
-brew install exa eza # ls alternative
-brew install opa # open policy agent
-brew install git-annex # git annex
-brew install pre-commit # git commit hooks
-brew install nap # code snippet save tool
-brew install z # cd alternative
-brew install pandoc # cd alternative
-brew install mods # ai prompt cli
-brew install poetry # python package tool
-brew install logseq obsidian # knowledge graph
-brew install notion # note taking app
-brew install postgresql popsql # postgresql utils
-brew install protonvpn # vpn
-brew install actionlint # GHA linter
-brew install git-delta # git delta color diff
-
-# AWS CLI UTIL
-brew install awscli
-brew install awscurl # performs requests to AWS services with request signing using curl interface
-brew tap aws/tap
-brew install aws-sam-cli
-brew install --cask session-manager-plugin
-sudo curl -Lo /usr/local/bin/ecs-cli https://amazon-ecs-cli.s3.amazonaws.com/ecs-cli-darwin-amd64-latest; sudo chmod +x /usr/local/bin/ecs-cli
-brew install --cask amazon-chime
-
-# GH extentions install
-gh extension install meiji163/gh-notify
-gh extension install dlvhdr/gh-dash
-
-# Install xcode
-xcode-select --install
+# TODO)bernadinm): source my base profile here
 
 # Vim 8 Packages
 git clone https://github.com/rust-lang/rust.vim ~/.vim/pack/plugins/start/rust.vim # rust.vim
@@ -126,8 +8,6 @@ git clone https://github.com/hashivim/vim-terraform.git ~/.vim/pack/plugins/star
 
 # Vim vundle install
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-# Vim vundle packages
-brew install fzf
 
 # vim_rc
 cat > ~/.vimrc <<'EOF'
@@ -177,37 +57,6 @@ map <C-o> :NERDTreeToggle<CR>
 syntax on
 EOF
 
-# Enable locate
-sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.locate.plist
-
-# Kubernetes related binaries
-brew install jsonnet
-brew install ksonnet/tap/ks
-brew tap instrumenta/instrumenta
-brew install kubeval
-brew install tmux
-brew install krew
-brew install k9s
-export PATH="${PATH}:${HOME}/.krew/bin"
-kubectl krew install view-utilization
-kubectl krew install unused-volumes
-kubectl krew install konfig
-kubectl krew install sniff
-go get -u -v github.com/heptio/sonobuoy
-curl -O https://raw.githubusercontent.com/spinnaker/halyard/master/install/macos/InstallHalyard.sh
-sudo bash InstallHalyard.sh
-brew install kubernetes-cli
-brew install kubernetes-helm
-curl -sL -o kubefed.tgz https://github.com/kubernetes-sigs/kubefed/releases/download/v0.1.0-rc5/kubefedctl-0.1.0-rc5-darwin-amd64.tgz
-tar -xvf kubefed.tgz
-chmod +x kubefedctl
-rm kubefed.tgz
-mv kubefedctl /usr/local/bin/.
-
-# Golang utils
-go get -u github.com/mgechev/revive
-go get github.com/blushft/go-diagrams
-
 # Key Imports
 curl -sSL gpg.miguel.engineer | gpg --import -
 echo "CF5D41CEBEE4D53C9FC738E2915FA8A6391DDAC6:6:" | gpg --import-ownertrust
@@ -225,59 +74,6 @@ max-cache-ttl 7200
 EOF
 
 killall gpg-agent
-
-# brew cask list | xargs -L1
-brew install --cask google-chrome
-brew install --cask brave-browser
-brew install --cask firefox
-brew install --cask iterm2
-brew install --cask spectacle
-brew install --cask flux
-brew install --cask virtualbox
-brew install --cask atom
-brew install --cask marshallofsound-google-play-music-player
-brew install --cask slack
-brew install --cask docker
-brew install --cask cloudapp
-brew install --cask google-cloud-sdk
-brew install --cask vagrant
-brew install --cask virtualbox # this will fail (mac security settings)
-brew install --cask zoomus
-brew install --cask ngrok
-brew install --cask java
-brew install --cask visual-studio-code
-brew install --cask lunar
-brew install --cask krisp
-brew install --cask iina
-brew install --cask canon-eos-utility
-brew install --cask adobe-creative-cloud
-brew install --cask fanny
-brew install --cask grammarly
-brew install --cask amethyst
-brew install --cask remarkable # https://github.com/Homebrew/homebrew-cask/pull/102776 (my PR)
-brew install --cask grammarly
-brew install --cask thunderbird
-brew install --cask rustdesk
-brew install --cask wireshark
-brew install --cask tla-plus-toolbox # tla+ formal verificaiton
-
-# npm packages
-npm install --global fast-cli # speedtest
-
-# GoTo Security and Priacy on Mac and allow Oracle
-brew cask reinstall --force virtualbox
-
-# Open Apps
-open -a spectacle
-open -a google-chrome
-open -a brave-browser
-open -a flux
-open -a atom
-open -a slack
-open -a docker
-open -a cloudapp
-open -a copyclip
-open -a marshallofsound-google-play-music-player
 
 # Atom Settings
 apm install Sublime-Style-Column-Selection
@@ -587,3 +383,25 @@ defaults write com.apple.notificationcenterui bannerTime 5
 
 # Add import personal cmds to navi
 navi repo add git@github.com:bernadinm/cheats
+
+# brew cask list | xargs -L1
+brew install --cask flux
+brew install --cask cloudapp
+brew install --cask krisp
+brew install --cask iina
+brew install --cask canon-eos-utility
+brew install --cask adobe-creative-cloud
+brew install --cask fanny
+brew install --cask amethyst
+brew install --cask remarkable # https://github.com/Homebrew/homebrew-cask/pull/102776 (my PR)
+brew install --cask grammarly
+brew install --cask rustdesk
+brew install --cask tla-plus-toolbox # tla+ formal verificaiton
+brew install --cask marshallofsound-google-play-music-player
+
+# Open Apps
+open -a spectacle
+open -a cloudapp
+open -a copyclip
+open -a marshallofsound-google-play-music-player
+open -a flux
