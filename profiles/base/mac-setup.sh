@@ -1,5 +1,6 @@
 #!/bin/zsh
 
+echo "Installing brew.sh. It requires sudo to install it."
 # Install homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 brew tap caskroom/cask
