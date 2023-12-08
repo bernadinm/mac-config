@@ -1,6 +1,6 @@
 #!/bin/zsh
 
-echo "Installing brew.sh. It requires sudo to install it."
+echo "Installing brew.sh as it requires sudo to install it. You may skip brew install by pressing ctrl + c."
 # Install homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 brew tap caskroom/cask
