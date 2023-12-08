@@ -1,6 +1,7 @@
 #!/bin/zsh
 
-# TODO)bernadinm): source my base profile here
+# Apply base workstation configuration
+curl -fsSL https://raw.githubusercontent.com/bernadinm/mac-config/master/profiles/base/mac-setup.sh | zsh
 
 # Vim 8 Packages
 git clone https://github.com/rust-lang/rust.vim ~/.vim/pack/plugins/start/rust.vim # rust.vim
