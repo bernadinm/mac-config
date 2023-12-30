@@ -106,6 +106,7 @@ brew install postgresql popsql # postgresql utils
 brew install protonvpn # vpn
 brew install actionlint # GHA linter
 brew install git-delta # git delta color diff
+brew install httpie # curl alternative
 
 # AWS CLI UTIL
 brew install awscli
