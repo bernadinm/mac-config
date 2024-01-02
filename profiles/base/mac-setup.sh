@@ -61,7 +61,6 @@ brew install pwgen
 brew install go-jira
 brew install graphviz
 brew install python3 && sudo easy_install pip
-brew install python-lsp-server
 brew install rust
 brew install maven
 brew install bash; sudo bash -c 'echo /usr/local/bin/bash >> /etc/shells'
@@ -107,6 +106,10 @@ brew install protonvpn # vpn
 brew install actionlint # GHA linter
 brew install git-delta # git delta color diff
 brew install httpie # curl alternative
+
+# LSP Lanuage Server
+brew install yaml-language-server # yaml
+brew install python-lsp-server # python
 
 # AWS CLI UTIL
 brew install awscli
