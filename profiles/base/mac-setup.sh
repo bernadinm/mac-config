@@ -106,6 +106,7 @@ brew install protonvpn # vpn
 brew install actionlint # GHA linter
 brew install git-delta # git delta color diff
 brew install httpie # curl alternative
+brew install xh # httpie alternative
 
 # LSP Lanuage Server
 brew install yaml-language-server # yaml
