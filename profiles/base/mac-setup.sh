@@ -139,6 +139,7 @@ brew install jsonnet
 brew install ksonnet/tap/ks
 brew tap instrumenta/instrumenta
 brew install kubeval
+brew install prometheus
 brew install tmux
 brew install krew
 brew install k9s
