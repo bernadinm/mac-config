@@ -111,6 +111,7 @@ brew install xh # httpie alternative
 # LSP Lanuage Server
 brew install yaml-language-server # yaml
 brew install python-lsp-server # python
+brew install dockerfile-language-server # dockerfile
 
 # AWS CLI UTIL
 brew install awscli
