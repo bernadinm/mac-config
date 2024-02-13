@@ -13,7 +13,7 @@ brew update
 brew install slate
 brew install terraform
 brew install wget
-brew install git gti gh
+brew install git gti gh git-lfs
 brew install gpg-suite
 brew install pinentry-mac
 brew install tmate
