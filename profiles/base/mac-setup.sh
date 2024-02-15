@@ -113,6 +113,9 @@ brew install yaml-language-server # yaml
 brew install python-lsp-server # python
 brew install dockerfile-language-server # dockerfile
 
+# AI Workloads
+pip install vllm
+
 # AWS CLI UTIL
 brew install awscli
 brew install awscurl # performs requests to AWS services with request signing using curl interface
