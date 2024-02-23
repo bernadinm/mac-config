@@ -150,9 +150,11 @@ alias b='cd ~/git/bernadinm/'
 alias vi='hx'
 alias ll='exa -l'
 alias ls='exa'
-alias rg='rg -.'
+alias rg='rg -. -M 500'
 alias k='kubectl'
 alias mods='OPENAI_API_KEY=$(pass openai.com/$(hostname)/api-key) mods'
+alias mp='OPENAI_API_KEY=$(pass openai.com/$(hostname)/api-key) mods -P'
+alias mcp='OPENAI_API_KEY=$(pass openai.com/$(hostname)/api-key) mods -C -P'
 alias lsaltr='exa -al --sort=oldest --reverse'
 export PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin"
 export PATH="$PATH:${HOME}/.deno/bin"
