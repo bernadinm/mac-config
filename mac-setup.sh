@@ -58,6 +58,35 @@ map <C-o> :NERDTreeToggle<CR>
 syntax on
 EOF
 
+# helix config
+mkdir -p ~/.config/helix
+cat > ~/.config/helix/config.toml <<'EOF'
+theme = "github_dark"
+
+[editor]
+line-number = "relative"
+mouse = false
+whitespace.render = "all"
+soft-wrap.enable = true
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.file-picker]
+hidden = false
+
+[editor.statusline]
+left = ["mode", "spinner"]
+center = ["file-name"]
+right = ["diagnostics", "selections", "position", "file-encoding", "file-line-ending", "file-type"]
+separator = "│"
+
+[editor.search]
+wrap-around = true
+EOF
+
 # Key Imports
 curl -sSL gpg.miguel.engineer | gpg --import -
 echo "CF5D41CEBEE4D53C9FC738E2915FA8A6391DDAC6:6:" | gpg --import-ownertrust
