@@ -177,14 +177,14 @@ alias g='cd ~/git'
 alias n='cd ~/git/bernadinm/nix-config'
 alias b='cd ~/git/bernadinm/'
 alias vi='hx'
-alias ll='exa -l'
+alias ll='exa -lg'
 alias ls='exa'
 alias rg='rg -. -M 500'
 alias k='kubectl'
 alias mods='OPENAI_API_KEY=$(pass openai.com/$(hostname)/api-key) mods'
 alias mp='OPENAI_API_KEY=$(pass openai.com/$(hostname)/api-key) mods -P'
 alias mcp='OPENAI_API_KEY=$(pass openai.com/$(hostname)/api-key) mods -C -P'
-alias lsaltr='exa -al --sort=oldest --reverse'
+alias lsaltr='exa -alg --sort=oldest --reverse'
 export PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin"
 export PATH="$PATH:${HOME}/.deno/bin"
 export PATH="$PATH:/opt/homebrew/bin/"
